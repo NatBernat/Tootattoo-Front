@@ -23,7 +23,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --watchAll=false --passWithNoTests",
-    "test-coverage": "jest --coverage --watchAll=false --env=jsdom",
+    "test-coverage": "npm run test -- --coverage --watchAll=false",
     "eject": "react-scripts eject",
     "prepare": "husky install"
   },
@@ -47,5 +47,16 @@
   },
   "devDependencies": {
     "husky": "^7.0.0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.tsx",
+      "!src/index.tsx",
+      "!src/**/*.test.tsx",
+      "src/**/*.snap",
+      "src/mocks/*.tsx",
+      "src/reportWebVitals.tsx",
+      "!.eslintrc.tsx"
+    ]
   }
 }
