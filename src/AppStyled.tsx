@@ -10,6 +10,6 @@ const AppStyled = createGlobalStyle`
       text-align: center;
       padding-top: 30px;
     }
- `;
+  `;
 
 export default AppStyled;
