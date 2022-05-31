@@ -9,6 +9,7 @@ const LoginFormStyled = styled.section`
   margin-top: 40px;
   border-radius: 25px;
   font-size: 1.5em;
+  margin: 10px;
 
   form {
     display: flex;
@@ -43,10 +44,12 @@ const LoginFormStyled = styled.section`
     cursor: pointer;
     font-size: 0.8em;
   }
+
   p {
     text-align: center;
+    font-weight: bold;
     cursor: pointer;
-    color: #320101;
+    color: #1b1b1e;
     font-size: 0.8em;
   }
 `;
