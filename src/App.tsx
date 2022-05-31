@@ -1,9 +1,15 @@
+import LogInForm from "./components/LogInForm/LogInForm";
+
 const App = () => {
   return (
-    <div className="App">
-      <h1>Tootattoo</h1>
-      <p>Site under contruction</p>
-    </div>
+    <>
+      <div className="App">
+        <h1 title="Tootattoo">
+          <img src="" alt="Tootattoo logo" />
+        </h1>
+        <LogInForm />
+      </div>
+    </>
   );
 };
 
