@@ -1,12 +1,11 @@
 import { ChangeEvent, useState } from "react";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../../redux/store/store";
+import { loginUserThunk } from "../../redux/thunks/userThunks/userThunks";
+import { ILogInForm } from "../../types/types";
 import LogInFormStyled from "./LogInFormStyled";
 
 const LogInForm = (): JSX.Element => {
-  interface ILogInForm {
-    username: string;
-    password: string;
-  }
-
   const formInitialState: ILogInForm = { username: "", password: "" };
 
   const [formData, setFormData] = useState<ILogInForm>(formInitialState);
@@ -19,10 +18,13 @@ const LogInForm = (): JSX.Element => {
     setFormData(formInitialState);
   };
 
+  const dispatch: AppDispatch = useDispatch();
   const submitLogin = (event: React.SyntheticEvent) => {
     event.preventDefault();
-
+    const dispatchedData = { ...formData };
     resetForm();
+
+    dispatch(loginUserThunk(dispatchedData));
   };
 
   return (

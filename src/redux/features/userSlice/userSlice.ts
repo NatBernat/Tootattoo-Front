@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IInitialState, IUserInfo } from "../../../types/types";
+import { IUserState, IUserInfo } from "../../../types/types";
 
-const initialState: IInitialState = {
+const initialState: IUserState = {
   username: "",
   fullname: "",
   logged: false,
@@ -12,7 +12,7 @@ const usersSlice = createSlice({
   initialState,
 
   reducers: {
-    login: (user: IInitialState, action: PayloadAction<IUserInfo>) => ({
+    login: (user: IUserState, action: PayloadAction<IUserInfo>) => ({
       ...action.payload,
       logged: true,
     }),
