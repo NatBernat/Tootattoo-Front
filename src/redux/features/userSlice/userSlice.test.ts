@@ -21,5 +21,3 @@ describe("Given a usersSlice reducer", () => {
     });
   });
 });
-
-export {};
