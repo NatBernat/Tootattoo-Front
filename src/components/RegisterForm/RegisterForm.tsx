@@ -24,11 +24,12 @@ const RegisterForm = (): JSX.Element => {
   };
 
   const dispatch: AppDispatch = useDispatch();
+
   const submitRegister = (event: React.SyntheticEvent) => {
     event.preventDefault();
     const dispatchedData = { ...formData };
-    resetForm();
 
+    resetForm();
     dispatch(registerUserThunk(dispatchedData));
   };
   return (
@@ -56,8 +57,8 @@ const RegisterForm = (): JSX.Element => {
         <label htmlFor="email"> E-mail </label>
         <input id="email" value={formData.email} onChange={changeFormData} />
 
-        <button type="submit">Log In</button>
-        <p>Register</p>
+        <button type="submit">Register</button>
+        <p>Login</p>
       </form>
     </LoginFormStyled>
   );
