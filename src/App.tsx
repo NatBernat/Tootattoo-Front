@@ -1,6 +1,6 @@
 import LogInForm from "./components/LogInForm/LogInForm";
 
-const App = () => {
+const App = (): JSX.Element => {
   return (
     <>
       <div className="App">
