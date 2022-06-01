@@ -27,5 +27,3 @@ describe("Given the userThunks", () => {
     });
   });
 });
-
-export {};
