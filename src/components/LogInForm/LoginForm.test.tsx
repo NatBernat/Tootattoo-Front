@@ -1,5 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { Provider } from "react-redux";
+import store from "../../redux/store/store";
 import LogInForm from "./LogInForm";
 
 describe("Given a LoginForm component", () => {
@@ -8,7 +10,11 @@ describe("Given a LoginForm component", () => {
       const testedLabel = "Password";
       const inputPassword = "1234";
 
-      render(<LogInForm />);
+      render(
+        <Provider store={store}>
+          <LogInForm />
+        </Provider>
+      );
 
       const passwordLabel: HTMLLabelElement =
         screen.getByLabelText(testedLabel);

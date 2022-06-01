@@ -3,7 +3,6 @@ import { IUserState, IUserInfo } from "../../../types/types";
 
 const initialState: IUserState = {
   username: "",
-  fullname: "",
   logged: false,
 };
 

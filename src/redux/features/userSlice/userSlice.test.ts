@@ -7,12 +7,10 @@ describe("Given a usersSlice reducer", () => {
     test("Then it should return the same user logged", () => {
       const initialUser: IUserState = {
         username: "testuser",
-        fullname: "Test User",
         logged: false,
       };
       const expectedUser: IUserState = {
         username: "testuser",
-        fullname: "Test User",
         logged: true,
       };
 
