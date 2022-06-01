@@ -11,6 +11,8 @@
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.5",
     "@types/react-test-renderer": "^18.0.0",
+    "axios": "^0.27.2",
+    "jwt-decode": "^3.1.2",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-redux": "^8.0.2",
@@ -48,18 +50,25 @@
     "@types/jest": "^27.5.1",
     "@types/styled-components": "^5.1.25",
     "husky": "^7.0.0",
+    "msw": "^0.42.0",
     "styled-components": "^5.3.5",
     "ts-jest": "^28.0.3"
   },
   "jest": {
     "collectCoverageFrom": [
+      "src/**/*.ts",
       "src/**/*.tsx",
       "!src/index.tsx",
+      "!src/**/*.test.ts",
       "!src/**/*.test.tsx",
-      "src/**/*.snap",
-      "src/mocks/*.tsx",
-      "src/reportWebVitals.ts",
-      "!.eslintrc.tsx"
+      "!src/**/*.snap",
+      "!src/mocks/*.ts",
+      "!src/mocks/*.tsx",
+      "!src/reportWebVitals.ts",
+      "!react-app-env.d.ts"
     ]
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }
