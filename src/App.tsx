@@ -1,5 +1,5 @@
-import LogInForm from "./components/LogInForm/LogInForm";
 import AppStyled from "./AppStyled";
+import RegisterForm from "./components/RegisterForm/RegisterForm";
 
 const App = (): JSX.Element => {
   return (
@@ -9,7 +9,7 @@ const App = (): JSX.Element => {
         <h1 title="Tootattoo">
           <img src="" alt="Tootattoo logo" />
         </h1>
-        <LogInForm />
+        <RegisterForm />
       </div>
     </>
   );
