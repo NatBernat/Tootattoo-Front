@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given a Loading Component When it's rendered Then it should always match this snapshot 1`] = `
+<div
+  className="sc-bczRLJ jJNqbX"
+>
+  <img
+    alt="Loader"
+    src="./images/imageLogo.png"
+  />
+</div>
+`;

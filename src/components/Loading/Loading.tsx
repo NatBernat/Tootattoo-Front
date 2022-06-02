@@ -1,6 +1,6 @@
 import LoadingStyled from "./LoadingStyled";
 
-const Loading = () => {
+const Loading = (): JSX.Element => {
   return (
     <LoadingStyled>
       <img src="./images/imageLogo.png" alt="Loader" />
