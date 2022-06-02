@@ -3,7 +3,8 @@ import jwtDecode from "jwt-decode";
 import {
   ILogInForm,
   IRegisterInfo,
-  IToken,
+  IRegisterResponse,
+  ILoginResponse,
   IUserInfo,
 } from "../../../types/types";
 import { loginActionCreator } from "../../features/userSlice/userSlice";
@@ -12,7 +13,7 @@ import { AppDispatch } from "../../store/store";
 export const loginUserThunk =
   (loginData: ILogInForm) => async (dispatch: AppDispatch) => {
     const route: string = `${process.env.REACT_APP_API_URL}/users/login`;
-    const { data: token } = await axios.post<ILogInForm, IToken>(
+    const { data: token } = await axios.post<ILogInForm, ILoginResponse>(
       route,
       loginData
     );
@@ -25,7 +26,7 @@ export const loginUserThunk =
 
 export const registerUserThunk =
   (registerData: IRegisterInfo) => async (dispatch: AppDispatch) => {
-    const route = `${process.env.REACT_APP_API_URL}/users/register`;
+    const route: string = `${process.env.REACT_APP_API_URL}/users/register`;
 
-    await axios.post(route, registerData);
+    await axios.post<IRegisterInfo, IRegisterResponse>(route, registerData);
   };

@@ -3,7 +3,18 @@ export interface ILogInForm {
   password: string;
 }
 
-export interface IToken {
+export interface IRegisterInfo {
+  username: string;
+  password: string;
+  fullname: string;
+  email: string;
+}
+
+export interface IRegisterResponse {
+  user: string;
+}
+
+export interface ILoginResponse {
   data: string;
 }
 
@@ -14,11 +25,4 @@ export interface IUserState {
 
 export interface IUserInfo {
   username: string;
-}
-
-export interface IRegisterInfo {
-  username: string;
-  password: string;
-  fullname: string;
-  email: string;
 }

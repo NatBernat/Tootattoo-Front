@@ -1,5 +1,5 @@
 import { ChangeEvent, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useAppDispatch } from "../../redux/hooks/hooks";
 import { AppDispatch } from "../../redux/store/store";
 import { loginUserThunk } from "../../redux/thunks/userThunks/userThunks";
 import { ILogInForm } from "../../types/types";
@@ -18,7 +18,7 @@ const LogInForm = (): JSX.Element => {
     setFormData(formInitialState);
   };
 
-  const dispatch: AppDispatch = useDispatch();
+  const dispatch: AppDispatch = useAppDispatch();
   const submitLogin = (event: React.SyntheticEvent) => {
     event.preventDefault();
     const dispatchedData = { ...formData };

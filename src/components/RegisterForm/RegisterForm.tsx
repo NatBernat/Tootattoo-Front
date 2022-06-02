@@ -1,5 +1,5 @@
 import { ChangeEvent, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useAppDispatch } from "../../redux/hooks/hooks";
 import { AppDispatch } from "../../redux/store/store";
 import { registerUserThunk } from "../../redux/thunks/userThunks/userThunks";
 import { IRegisterInfo } from "../../types/types";
@@ -23,7 +23,7 @@ const RegisterForm = (): JSX.Element => {
     setFormData(formInitialState);
   };
 
-  const dispatch: AppDispatch = useDispatch();
+  const dispatch: AppDispatch = useAppDispatch();
 
   const submitRegister = (event: React.SyntheticEvent) => {
     event.preventDefault();
