@@ -1,5 +1,5 @@
 import AppStyled from "./AppStyled";
-import RegisterForm from "./components/RegisterForm/RegisterForm";
+import Loading from "./components/Loading/Loading";
 
 const App = (): JSX.Element => {
   return (
@@ -7,9 +7,9 @@ const App = (): JSX.Element => {
       <AppStyled />
       <div className="App">
         <h1 title="Tootattoo">
-          <img src="" alt="Tootattoo logo" />
+          <img src="./images/textLogo.png" alt="Tootattoo logo" />
         </h1>
-        <RegisterForm />
+        <Loading />
       </div>
     </>
   );
