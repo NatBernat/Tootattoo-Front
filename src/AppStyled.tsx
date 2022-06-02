@@ -5,10 +5,14 @@ const AppStyled = createGlobalStyle`
       font-family: "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
       "Droid Sans", "Helvetica Neue", sans-serif;
       margin: 0;
+    }
+    h1 {
       display: flex;
       justify-content: center;
-      text-align: center;
-      padding-top: 30px;
+      img {
+        width: 90vw;
+        max-width: fit-content;
+      }
     }
   `;
 
