@@ -2,7 +2,7 @@
 
 exports[`Given a Loading Component When it's rendered Then it should always match this snapshot 1`] = `
 <div
-  className="sc-bczRLJ jJNqbX"
+  className="sc-bczRLJ bSimsh"
 >
   <img
     alt="Loader"

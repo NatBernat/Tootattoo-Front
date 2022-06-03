@@ -7,7 +7,7 @@ const LoginFormStyled = styled.section`
   background-color: #ffbfbf;
   padding: 20px;
   margin-top: 40px;
-  border-radius: 25px;
+  border-radius: 10px;
   font-size: 1.5em;
   margin: 10px;
 

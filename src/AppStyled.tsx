@@ -10,7 +10,7 @@ const AppStyled = createGlobalStyle`
       display: flex;
       justify-content: center;
       img {
-        width: 90vw;
+        width: 80vw;
         max-width: fit-content;
       }
     }
