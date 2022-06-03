@@ -1,5 +1,6 @@
 import TattooItem from "../../components/TattooItem/TattooItem";
 import { ITattooDetail } from "../../types/types";
+import PublicListPageStyled from "./PublicListPageStyled";
 
 const PublicListPage = (): JSX.Element => {
   const mockTattoos: ITattooDetail[] = [
@@ -23,12 +24,11 @@ const PublicListPage = (): JSX.Element => {
   ];
 
   return (
-    <>
-      <h2>All tattoos</h2>
+    <PublicListPageStyled>
       {mockTattoos.map((tattoo) => {
         return <TattooItem image={tattoo.image} title={tattoo.title} />;
       })}
-    </>
+    </PublicListPageStyled>
   );
 };
 
