@@ -10,6 +10,7 @@ const LoadingStyled = styled.div`
     width: 150px;
     height: 0 auto;
     animation: spin 3s cubic-bezier(0.5, 0.25, 0.5, 0.75) infinite;
+    cursor: wait;
   }
   @keyframes spin {
     0% {
