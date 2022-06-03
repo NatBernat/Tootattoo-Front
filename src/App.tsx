@@ -1,5 +1,5 @@
 import AppStyled from "./AppStyled";
-import Loading from "./components/Loading/Loading";
+import TattooItem from "./components/TattooItem/TattooItem";
 
 const App = (): JSX.Element => {
   return (
@@ -9,7 +9,10 @@ const App = (): JSX.Element => {
         <h1 title="Tootattoo">
           <img src="./images/textLogo.png" alt="Tootattoo logo" />
         </h1>
-        <Loading />
+        <TattooItem
+          title="test title"
+          image="https://i.pinimg.com/564x/e8/f7/0c/e8f70c51540684a4daf881a0cb73ed42.jpg"
+        />
       </div>
     </>
   );

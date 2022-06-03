@@ -65,8 +65,7 @@
       "!src/**/*.snap",
       "!src/mocks/*.ts",
       "!src/mocks/*.tsx",
-      "!src/reportWebVitals.ts",
-      "!react-app-env.d.ts"
+      "!src/reportWebVitals.ts"
     ]
   },
   "msw": {
