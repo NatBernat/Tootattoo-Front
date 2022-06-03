@@ -1,10 +1,12 @@
-import { ITattooCard } from "../../types/types";
+import { ITattoo } from "../../types/types";
 import TattooItemStyled from "./TattooItemStyled";
 
-const TattooItem = (tattoo: ITattooCard): JSX.Element => {
+const TattooItem = ({ tattoo }: ITattoo): JSX.Element => {
+  const { image, title } = tattoo;
+
   return (
     <TattooItemStyled>
-      <img src={tattoo.image} alt={tattoo.title} title={tattoo.title} />
+      <img src={image} alt={title} title={title} />
     </TattooItemStyled>
   );
 };
