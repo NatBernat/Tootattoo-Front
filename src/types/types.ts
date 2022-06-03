@@ -23,11 +23,12 @@ export interface ITattooCard {
   image: string;
 }
 export interface ITattooDetail {
+  id: string;
   title: string;
   image: string;
   creator: string;
   creationDate: string;
-  tags: [String];
+  tags: string[];
 }
 
 export interface IUserState {
