@@ -18,17 +18,15 @@ export interface IRegisterResponse {
   user: string;
 }
 
-export interface ITattooCard {
-  title: string;
-  image: string;
-}
-export interface ITattooDetail {
-  id: string;
-  title: string;
-  image: string;
-  creator: string;
-  creationDate: string;
-  tags: string[];
+export interface ITattoo {
+  tattoo: {
+    id: string;
+    title: string;
+    image: string;
+    creator: string;
+    creationDate: string;
+    tags: string[];
+  };
 }
 
 export interface IUserState {
