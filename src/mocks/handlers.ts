@@ -8,6 +8,9 @@ export const handlers = [
   ),
   rest.post(
     `${process.env.REACT_APP_API_URL}/users/register`,
-    (req, res, ctx) => res(ctx.status(200), ctx.json({ user: "testuser" }))
+    (req, res, ctx) => res(ctx.status(201), ctx.json({ user: "testuser" }))
+  ),
+  rest.get(`${process.env.REACT_APP_API_URL}/tattoos/list`, (req, res, ctx) =>
+    res(ctx.status(201), ctx.json({ user: "testuser" }))
   ),
 ];
