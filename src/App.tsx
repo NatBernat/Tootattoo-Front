@@ -6,9 +6,11 @@ const App = (): JSX.Element => {
     <>
       <AppStyled />
       <div className="App">
-        <h1 title="Tootattoo">
-          <img src="./images/textLogo.png" alt="Tootattoo logo" />
-        </h1>
+        <header>
+          <h1 title="Tootattoo">
+            <img src="./images/textLogo.png" alt="Tootattoo logo" />
+          </h1>
+        </header>
         <PublicListPage />
       </div>
     </>

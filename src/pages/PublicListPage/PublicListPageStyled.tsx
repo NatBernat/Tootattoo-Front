@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const PublicListPageStyled = styled.div`
+const PublicListPageStyled = styled.li`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

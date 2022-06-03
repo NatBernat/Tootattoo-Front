@@ -19,14 +19,12 @@ export interface IRegisterResponse {
 }
 
 export interface ITattoo {
-  tattoo: {
-    id: string;
-    title: string;
-    image: string;
-    creator: string;
-    creationDate: string;
-    tags: string[];
-  };
+  id: string;
+  title: string;
+  image: string;
+  creator: string;
+  creationDate: string;
+  tags: string[];
 }
 
 export interface IUserState {
