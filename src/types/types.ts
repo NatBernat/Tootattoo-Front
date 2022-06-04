@@ -19,7 +19,7 @@ export interface IRegisterResponse {
 }
 
 export interface ITattoo {
-  id: string;
+  _id: string;
   title: string;
   image: string;
   creator: string;

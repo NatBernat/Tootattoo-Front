@@ -17,7 +17,7 @@ const PublicListPage = (): JSX.Element => {
   return (
     <PublicListPageStyled>
       {tattoos.map((tattoo) => {
-        return <TattooItem key={tattoo.id} tattoo={tattoo} />;
+        return <TattooItem key={tattoo._id} tattoo={tattoo} />;
       })}
     </PublicListPageStyled>
   );

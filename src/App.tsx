@@ -1,5 +1,5 @@
 import AppStyled from "./AppStyled";
-import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import PublicListPage from "./pages/PublicListPage/PublicListPage";
 
 const App = (): JSX.Element => {
   return (
@@ -9,7 +9,8 @@ const App = (): JSX.Element => {
           <img src="./images/textLogo.svg" alt="Tootattoo logo" />
         </h1>
       </header>
-      <NotFoundPage />
+      <PublicListPage />
+      <p className="copyrigth">© 2022 Tootattoo.</p>
     </AppStyled>
   );
 };
