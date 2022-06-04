@@ -10,8 +10,9 @@ const LoginFormStyled = styled.section`
   padding: 20px;
   border-radius: 8px;
   margin: 0 auto;
-  width: fit-content;
-  font-size: 1.2em;
+  width: 100%;
+  max-width: 500px;
+  font-size: 1.5em;
 
   form {
     display: flex;
@@ -27,7 +28,7 @@ const LoginFormStyled = styled.section`
     border-radius: 8px;
     border-width: 0;
     margin: 5px;
-    height: 30px;
+    height: 50px;
     width: 90%;
     padding: 10px;
     text-align: center;
@@ -44,7 +45,8 @@ const LoginFormStyled = styled.section`
     color: white;
     background-color: #055a25;
     cursor: pointer;
-    font-size: 0.8em;
+    font-family: inherit;
+    font-size: 1em;
   }
 
   button:hover {
@@ -55,15 +57,26 @@ const LoginFormStyled = styled.section`
     background-color: #000201;
   }
 
-  p {
-    text-align: center;
-    font-weight: bold;
-    cursor: pointer;
+  .register-button {
+    background-color: #64cc8c;
     color: #1b1b1e;
-    font-size: 0.8em;
   }
-  p:active {
-    color: #055a25;
+  .register-button:hover {
+    background-color: #48db80;
+  }
+  .register-button:active {
+    background-color: #a8d6ba;
+  }
+
+  .login-button {
+    background-color: #64cc8c;
+    color: #1b1b1e;
+  }
+  .login-button:hover {
+    background-color: #48db80;
+  }
+  .login-button:active {
+    background-color: #a8d6ba;
   }
 `;
 

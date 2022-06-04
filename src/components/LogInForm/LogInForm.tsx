@@ -44,7 +44,7 @@ const LogInForm = (): JSX.Element => {
           onChange={changeFormData}
         />
         <button type="submit">Log In</button>
-        <p>Register</p>
+        <button className="register-button">Register</button>
       </form>
     </LogInFormStyled>
   );

@@ -58,7 +58,7 @@ const RegisterForm = (): JSX.Element => {
         <input id="email" value={formData.email} onChange={changeFormData} />
 
         <button type="submit">Register</button>
-        <p>Login</p>
+        <button className="login-button">Login</button>
       </form>
     </LoginFormStyled>
   );
