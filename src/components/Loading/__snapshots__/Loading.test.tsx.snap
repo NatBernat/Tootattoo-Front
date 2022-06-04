@@ -6,7 +6,7 @@ exports[`Given a Loading Component When it's rendered Then it should always matc
 >
   <img
     alt="Loader"
-    src="./images/imageLogo.png"
+    src="./images/imageLogo.svg"
   />
 </div>
 `;

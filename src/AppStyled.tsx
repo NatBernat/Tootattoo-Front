@@ -1,19 +1,15 @@
-import { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
 
-const AppStyled = createGlobalStyle`
-    body{
-      font-family: "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-      "Droid Sans", "Helvetica Neue", sans-serif;
-      margin: 0;
+const AppStyled = styled.div`
+  header * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 60vw;
+      max-width: fit-content;
     }
-    h1 {
-      display: flex;
-      justify-content: center;
-      img {
-        width: 80vw;
-        max-width: fit-content;
-      }
-    }
-  `;
+  }
+`;
 
 export default AppStyled;
