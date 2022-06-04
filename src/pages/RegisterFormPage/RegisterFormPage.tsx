@@ -1,11 +1,12 @@
 import RegisterForm from "../../components/RegisterForm/RegisterForm";
+import LogInFormPageStyled from "../LogInFormPage/LogInFormPageStyled";
 
 const RegisterFormPage = (): JSX.Element => {
   return (
-    <>
-      <h2 className="page-title">Register in TooTattoo</h2>
+    <LogInFormPageStyled>
+      <h2 className="page-title">Register on TooTattoo</h2>
       <RegisterForm />
-    </>
+    </LogInFormPageStyled>
   );
 };
 
