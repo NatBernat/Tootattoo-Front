@@ -10,6 +10,11 @@ const AppStyled = styled.div`
       max-width: fit-content;
     }
   }
+  .copyrigth {
+    margin-top: 30px;
+    font-size: 0.8em;
+    text-align: center;
+  }
 `;
 
 export default AppStyled;

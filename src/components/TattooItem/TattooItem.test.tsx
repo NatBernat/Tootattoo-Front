@@ -3,7 +3,7 @@ import { Provider } from "react-redux";
 import store from "../../redux/store/store";
 import TattooItem from "./TattooItem";
 
-import mockTattoos from "../../mocks/utils";
+import mockTattoos from "../../mocks/mockTattoos";
 
 describe("Given a TattooItem component", () => {
   describe("When it's invoked", () => {

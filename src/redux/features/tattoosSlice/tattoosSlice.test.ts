@@ -1,4 +1,4 @@
-import mockTattoos from "../../../mocks/utils";
+import mockTattoos from "../../../mocks/mockTattoos";
 import { ITattoo } from "../../../types/types";
 import { loadTattoosActionCreator } from "./tattoosSlice";
 import tattoosReducer from "../../features/tattoosSlice/tattoosSlice";

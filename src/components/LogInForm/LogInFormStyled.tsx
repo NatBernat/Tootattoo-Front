@@ -4,25 +4,27 @@ const LoginFormStyled = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #ffbfbf;
+  align-items: center;
+  background-color: #09af49;
+  gap: 20px;
   padding: 20px;
-  margin-top: 40px;
   border-radius: 8px;
-  font-size: 1.5em;
-  margin: 10px;
+  margin: 0 auto;
+  width: fit-content;
+  font-size: 1.2em;
 
   form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 25px;
+    gap: 10px;
     margin: 2px;
     width: 100%;
   }
 
   input {
-    border-radius: 25px;
+    border-radius: 8px;
     border-width: 0;
     margin: 5px;
     height: 30px;
@@ -34,15 +36,23 @@ const LoginFormStyled = styled.section`
 
   button {
     border-width: 0;
-    border-radius: 25px;
+    border-radius: 8px;
     margin: 10px;
     width: 60%;
     height: 50px;
     padding: 6px;
     color: white;
-    background-color: #1b1b1e;
+    background-color: #055a25;
     cursor: pointer;
     font-size: 0.8em;
+  }
+
+  button:hover {
+    background-color: #023315;
+  }
+
+  button:active {
+    background-color: #000201;
   }
 
   p {
@@ -51,6 +61,9 @@ const LoginFormStyled = styled.section`
     cursor: pointer;
     color: #1b1b1e;
     font-size: 0.8em;
+  }
+  p:active {
+    color: #055a25;
   }
 `;
 

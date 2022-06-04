@@ -7,13 +7,16 @@ const TattooItemStyled = styled.li`
   img {
     width: 200px;
     height: 200px;
-    cursor: zoom-in;
+    cursor: pointer;
     object-fit: cover;
     border-radius: 3%;
   }
   img:hover {
-    width: 210px;
-    height: 210px;
+    filter: blur(1px);
+  }
+
+  img:active {
+    opacity: 0.75;
   }
 `;
 
