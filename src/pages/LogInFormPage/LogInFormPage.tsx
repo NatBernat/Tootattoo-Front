@@ -4,7 +4,7 @@ import LogInFormPageStyled from "./LogInFormPageStyled";
 const LogInFormPage = (): JSX.Element => {
   return (
     <LogInFormPageStyled>
-      <h2 className="title-page">Log into TooTattoo</h2>
+      <h2 className="page-title">Log into TooTattoo:</h2>
       <LogInForm />
     </LogInFormPageStyled>
   );
