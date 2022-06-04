@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const TattooItemStyled = styled.section`
+const TattooItemStyled = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;

@@ -12,7 +12,7 @@ describe("Given App component", () => {
           <App />
         </Provider>
       );
-      const testedHeader = screen.getByRole("heading");
+      const testedHeader = screen.getByRole("banner");
 
       expect(testedHeader).toBeInTheDocument();
     });

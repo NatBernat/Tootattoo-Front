@@ -1,14 +1,23 @@
+import { useEffect } from "react";
 import TattooItem from "../../components/TattooItem/TattooItem";
-import mockTattoos from "../../mocks/utils";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks/hooks";
+import { loadTattoosThunk } from "../../redux/thunks/tattoosThunks/tattoosThunks";
+import { ITattoo } from "../../types/types";
+
 import PublicListPageStyled from "./PublicListPageStyled";
 
-const tattoos = mockTattoos;
-
 const PublicListPage = (): JSX.Element => {
+  const dispatch = useAppDispatch();
+  const tattoos: ITattoo[] = useAppSelector((state) => state.tattoos);
+
+  useEffect(() => {
+    dispatch(loadTattoosThunk());
+  }, [dispatch]);
+
   return (
     <PublicListPageStyled>
       {tattoos.map((tattoo) => {
-        return <TattooItem tattoo={tattoo} />;
+        return <TattooItem key={tattoo.id} tattoo={tattoo} />;
       })}
     </PublicListPageStyled>
   );

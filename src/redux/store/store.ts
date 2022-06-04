@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import usersReducer from "../features/userSlice/userSlice";
+import tattoosReducer from "../features/tattoosSlice/tattoosSlice";
 
 const store = configureStore({
   reducer: {
     user: usersReducer,
+    tattoos: tattoosReducer,
   },
 });
 
