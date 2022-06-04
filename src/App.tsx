@@ -1,5 +1,5 @@
 import AppStyled from "./AppStyled";
-import PublicListPage from "./pages/PublicListPage/PublicListPage";
+import LogInFormPage from "./pages/LogInFormPage/LogInFormPage";
 
 const App = (): JSX.Element => {
   return (
@@ -9,7 +9,7 @@ const App = (): JSX.Element => {
           <img src="./images/textLogo.svg" alt="Tootattoo logo" />
         </h1>
       </header>
-      <PublicListPage />
+      <LogInFormPage />
       <p className="copyrigth">© 2022 Tootattoo.</p>
     </AppStyled>
   );
