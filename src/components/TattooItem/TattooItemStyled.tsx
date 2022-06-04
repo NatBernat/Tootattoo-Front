@@ -4,19 +4,19 @@ const TattooItemStyled = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;
-  img {
-    width: 200px;
-    height: 200px;
-    cursor: pointer;
-    object-fit: cover;
-    border-radius: 3%;
-  }
-  img:hover {
-    filter: blur(1px);
-  }
+  width: 200px;
+  height: 200px;
+  border-radius: 3%;
+  cursor: pointer;
+  overflow: hidden;
 
-  img:active {
-    opacity: 0.75;
+  img {
+    object-fit: cover;
+    width: 100%;
+    transition: 0.5s all ease-in-out;
+  }
+  :hover img {
+    transform: scale(1.1);
   }
 `;
 

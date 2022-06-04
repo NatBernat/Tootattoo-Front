@@ -8,7 +8,7 @@ const TattooItem = ({
 }): JSX.Element => {
   return (
     <TattooItemStyled>
-      <img src={image} alt={title} title={title} />
+      <img className="tattoo" src={image} alt={title} title={title} />
     </TattooItemStyled>
   );
 };
