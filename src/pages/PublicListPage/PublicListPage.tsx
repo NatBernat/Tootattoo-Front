@@ -8,12 +8,11 @@ import PublicListPageStyled from "./PublicListPageStyled";
 
 const PublicListPage = (): JSX.Element => {
   const dispatch = useAppDispatch();
+  const tattoos: ITattoo[] = useAppSelector((state) => state.tattoos);
 
   useEffect(() => {
     dispatch(loadTattoosThunk());
   }, [dispatch]);
-
-  const tattoos: ITattoo[] = useAppSelector((state) => state.tattoos);
 
   return (
     <PublicListPageStyled>

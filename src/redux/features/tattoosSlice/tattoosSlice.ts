@@ -8,7 +8,7 @@ const tattoosSlice = createSlice({
   initialState,
 
   reducers: {
-    loadTattoos: (tattoos, action: PayloadAction<ITattoo[]>) => [
+    loadTattoos: (tattoos: ITattoo[], action: PayloadAction<ITattoo[]>) => [
       ...action.payload,
     ],
   },
