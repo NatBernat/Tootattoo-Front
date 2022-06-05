@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
 import store from "../../redux/store/store";
 import LogInFormPage from "./LogInFormPage";
 
@@ -9,9 +10,11 @@ describe("Given LogInFormPage component", () => {
       const expectedLength = 2;
 
       render(
-        <Provider store={store}>
-          <LogInFormPage />
-        </Provider>
+        <BrowserRouter>
+          <Provider store={store}>
+            <LogInFormPage />
+          </Provider>
+        </BrowserRouter>
       );
 
       const testedButtons = screen.getAllByRole("button");

@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
 import store from "../../redux/store/store";
 import LogInForm from "./LogInForm";
 
@@ -18,9 +19,11 @@ describe("Given a LoginForm component", () => {
       const inputPassword = "1234";
 
       render(
-        <Provider store={store}>
-          <LogInForm />
-        </Provider>
+        <BrowserRouter>
+          <Provider store={store}>
+            <LogInForm />
+          </Provider>
+        </BrowserRouter>
       );
 
       const passwordLabel: HTMLLabelElement =
@@ -34,9 +37,11 @@ describe("Given a LoginForm component", () => {
   describe("When it's invoked and an user clicks on the 'Log In' button", () => {
     test("Then it should call the dispatch function", () => {
       render(
-        <Provider store={store}>
-          <LogInForm />
-        </Provider>
+        <BrowserRouter>
+          <Provider store={store}>
+            <LogInForm />
+          </Provider>
+        </BrowserRouter>
       );
 
       const loginButton = screen.getByRole("button", { name: "Log In" });
