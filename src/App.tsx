@@ -15,6 +15,7 @@ const App = (): JSX.Element => {
       </header>
       <Routes>
         <Route path="/" element={<PublicListPage />} />
+
         <Route path="/login" element={<LogInFormPage />} />
         <Route path="/register" element={<RegisterFormPage />} />
         <Route path="*" element={<NotFoundPage />} />

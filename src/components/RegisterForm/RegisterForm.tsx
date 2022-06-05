@@ -1,4 +1,5 @@
 import { ChangeEvent, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../redux/hooks/hooks";
 import { AppDispatch } from "../../redux/store/store";
 import { registerUserThunk } from "../../redux/thunks/userThunks/userThunks";
@@ -23,6 +24,11 @@ const RegisterForm = (): JSX.Element => {
     setFormData(formInitialState);
   };
 
+  const navigate = useNavigate();
+  const redirectLogin = () => {
+    navigate("/login");
+  };
+
   const dispatch: AppDispatch = useAppDispatch();
 
   const submitRegister = (event: React.SyntheticEvent) => {
@@ -31,6 +37,7 @@ const RegisterForm = (): JSX.Element => {
 
     resetForm();
     dispatch(registerUserThunk(dispatchedData));
+    redirectLogin();
   };
   return (
     <LoginFormStyled>
@@ -58,8 +65,10 @@ const RegisterForm = (): JSX.Element => {
         <input id="email" value={formData.email} onChange={changeFormData} />
 
         <button type="submit">Register</button>
-        <button className="login-button">Login</button>
       </form>
+      <button className="login-button" onClick={redirectLogin}>
+        Login
+      </button>
     </LoginFormStyled>
   );
 };

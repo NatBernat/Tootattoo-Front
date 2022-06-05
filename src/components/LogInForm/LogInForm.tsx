@@ -1,9 +1,12 @@
 import { ChangeEvent, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../redux/hooks/hooks";
 import { AppDispatch } from "../../redux/store/store";
 import { loginUserThunk } from "../../redux/thunks/userThunks/userThunks";
 import { ILogInForm } from "../../types/types";
 import LogInFormStyled from "./LogInFormStyled";
+
+const token = localStorage.getItem("token");
 
 const LogInForm = (): JSX.Element => {
   const formInitialState: ILogInForm = { username: "", password: "" };
@@ -18,6 +21,11 @@ const LogInForm = (): JSX.Element => {
     setFormData(formInitialState);
   };
 
+  const navigate = useNavigate();
+  const redirectRegister = () => {
+    navigate("/register");
+  };
+
   const dispatch: AppDispatch = useAppDispatch();
   const submitLogin = (event: React.SyntheticEvent) => {
     event.preventDefault();
@@ -25,6 +33,9 @@ const LogInForm = (): JSX.Element => {
     resetForm();
 
     dispatch(loginUserThunk(dispatchedData));
+    if (token) {
+      navigate("/public-list");
+    }
   };
 
   return (
@@ -44,8 +55,10 @@ const LogInForm = (): JSX.Element => {
           onChange={changeFormData}
         />
         <button type="submit">Log In</button>
-        <button className="register-button">Register</button>
       </form>
+      <button className="register-button" onClick={redirectRegister}>
+        Register
+      </button>
     </LogInFormStyled>
   );
 };
