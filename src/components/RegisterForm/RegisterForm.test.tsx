@@ -12,6 +12,13 @@ jest.mock("react-redux", () => ({
   useDispatch: () => mockDispatch,
 }));
 
+const mockNavigate = jest.fn();
+
+jest.mock("react-router-dom", () => ({
+  ...(jest.requireActual("react-router-dom") as any),
+  useNavigate: () => mockNavigate,
+}));
+
 describe("Given a RegisterForm component", () => {
   describe("When it's invoked", () => {
     test("Then it should render a password label", () => {
@@ -47,6 +54,23 @@ describe("Given a RegisterForm component", () => {
       userEvent.click(registerButton);
 
       expect(mockDispatch).toHaveBeenCalled();
+    });
+  });
+
+  describe("When it's invoked and an user clicks on the 'Login' button", () => {
+    test("Then it should call the navigate function", () => {
+      render(
+        <BrowserRouter>
+          <Provider store={store}>
+            <RegisterForm />
+          </Provider>
+        </BrowserRouter>
+      );
+
+      const registerButton = screen.getByRole("button", { name: "Register" });
+      userEvent.click(registerButton);
+
+      expect(mockNavigate).toHaveBeenCalled();
     });
   });
 });
