@@ -1,17 +1,11 @@
 import styled from "styled-components";
 
 const AppStyled = styled.div`
-  header * {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    img {
-      width: 60vw;
-      max-width: fit-content;
-    }
+  .page {
+    margin: 70px 10px 30px 10px;
   }
   .copyrigth {
-    margin-top: 30px;
+    margin: 30px 0 10px 0;
     font-size: 0.8em;
     text-align: center;
   }
