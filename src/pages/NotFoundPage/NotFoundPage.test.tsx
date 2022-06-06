@@ -6,7 +6,7 @@ import NotFoundPage from "./NotFoundPage";
 describe("Given NotFoundPage component", () => {
   describe("When it's instantiated", () => {
     test("Then it should render a paragraph", () => {
-      const expectedText = "The page you're looking for doesn't exist.";
+      const expectedText = "Page not found";
 
       render(
         <Provider store={store}>

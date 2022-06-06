@@ -6,8 +6,6 @@ import { loginUserThunk } from "../../redux/thunks/userThunks/userThunks";
 import { ILogInForm } from "../../types/types";
 import LogInFormStyled from "./LogInFormStyled";
 
-const token = localStorage.getItem("token");
-
 const LogInForm = (): JSX.Element => {
   const formInitialState: ILogInForm = { username: "", password: "" };
 
@@ -33,6 +31,7 @@ const LogInForm = (): JSX.Element => {
     resetForm();
 
     dispatch(loginUserThunk(dispatchedData));
+    const token = localStorage.getItem("token");
     if (token) {
       navigate("/public-list");
     }

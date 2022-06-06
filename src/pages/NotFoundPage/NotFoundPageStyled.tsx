@@ -8,9 +8,7 @@ const NotFoundPageStyled = styled.div`
   gap: 20px;
   padding: 20px;
   text-align: center;
-  background-color: #ffbfbf;
-  border-radius: 8px;
-  margin: 25vh auto;
+  background-color: #e6a9a9;
   width: fit-content;
   img {
     height: 100px;

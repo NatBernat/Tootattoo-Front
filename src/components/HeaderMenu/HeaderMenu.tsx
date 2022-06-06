@@ -1,14 +1,10 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import HeaderMenuStyled from "./HeaderMenuStyled";
 
 const HeaderMenu = (): JSX.Element => {
-  const [checked, setChecked] = useState(false);
-  const handleClick = () => setChecked(!checked);
-
   return (
     <HeaderMenuStyled className="header">
-      <Link to="/" onClick={handleClick}>
+      <Link to="/">
         <h1 title="Tootattoo" className="logo">
           <img src="./images/textLogo.svg" alt="Tootattoo logo" />
         </h1>
@@ -19,17 +15,17 @@ const HeaderMenu = (): JSX.Element => {
       </label>
       <ul className="menu">
         <li>
-          <Link to="/login">
+          <Link to="/login" className="header-link">
             <p>Account</p>
           </Link>
         </li>
         <li>
-          <Link to="/favourites">
+          <Link to="/favourites" className="header-link">
             <p>Favourites</p>
           </Link>
         </li>
         <li>
-          <Link to="/uploads">
+          <Link to="/uploads" className="header-link">
             <p>Uploads</p>
           </Link>
         </li>
