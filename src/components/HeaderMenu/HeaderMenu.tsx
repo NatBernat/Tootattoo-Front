@@ -2,16 +2,9 @@ import { Link } from "react-router-dom";
 import HeaderMenuStyled from "./HeaderMenuStyled";
 
 const HeaderMenu = (): JSX.Element => {
-  const menu = document.getElementById("menu-btn") as HTMLInputElement | null;
-  const closeMenu = () => {
-    if (menu != null) {
-      menu.checked = false;
-    }
-  };
-
   return (
     <HeaderMenuStyled className="header">
-      <Link to="/" onClick={closeMenu}>
+      <Link to="/">
         <h1 title="Tootattoo" className="logo">
           <img src="./images/textLogo.svg" alt="Tootattoo logo" />
         </h1>
