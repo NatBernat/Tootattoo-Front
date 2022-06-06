@@ -1,27 +1,32 @@
 import styled from "styled-components";
 
 const HeaderMenuStyled = styled.header`
-  h1 {
-    cursor: pointer;
-    img {
-      width: 25vw;
-      min-width: 150px;
-    }
-  }
-  Link {
-    text-decoration: none;
-  }
-  p {
-    color: #000;
-    font-size: 1.5em;
-    cursor: pointer;
-  }
   background-color: #fff;
   box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.3);
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 3;
+
+  h1 {
+    cursor: pointer;
+    img {
+      width: 25vw;
+      min-width: 150px;
+      max-width: 500px;
+    }
+  }
+
+  .header-link {
+    text-decoration: none;
+  }
+
+  p {
+    color: #000;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+
   ul {
     margin: 0;
     padding: 0;
@@ -29,16 +34,19 @@ const HeaderMenuStyled = styled.header`
     overflow: hidden;
     background-color: #fff;
   }
+
   li p {
     display: block;
     padding: 20px 20px;
     border-right: 1px solid #f4f4f4;
     text-decoration: none;
   }
+
   li p:hover,
   .menu-btn:hover {
     background-color: #f4f4f4;
   }
+
   .logo {
     display: block;
     max-width: 300px;
@@ -109,8 +117,6 @@ const HeaderMenuStyled = styled.header`
       top: 0;
     }
   }
-
-  /* 48em = 768px */
 
   @media (max-width: 450px) {
     .header li {

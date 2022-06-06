@@ -8,7 +8,6 @@ const TattooItemStyled = styled.li`
   height: 30vw;
   min-width: 250px;
   min-height: 250px;
-  border-radius: 8px;
   cursor: pointer;
   overflow: hidden;
 

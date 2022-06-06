@@ -4,6 +4,10 @@ const AppStyled = styled.div`
   .page {
     margin: 70px 10px 30px 10px;
   }
+  .not-found-page {
+    margin: 25vh auto;
+    padding: 10vh 10vw;
+  }
   .copyrigth {
     margin: 30px 0 10px 0;
     font-size: 0.8em;
