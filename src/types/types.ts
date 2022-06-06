@@ -1,7 +1,3 @@
-/* export interface ILoading {
-  loading: boolean;
-}
- */
 export interface ILogInForm {
   username: string;
   password: string;
