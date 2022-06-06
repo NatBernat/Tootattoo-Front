@@ -27,6 +27,10 @@ export interface ITattoo {
   tags: string[];
 }
 
+export interface ITokenInfo {
+  username: string;
+}
+
 export interface IUserState {
   username: string;
   logged: boolean;
