@@ -7,7 +7,6 @@ const PublicListPageStyled = styled.ul`
   justify-content: center;
   align-items: center;
   gap: 20px;
-  margin: 10px;
   list-style: none;
   padding: 0px;
 `;

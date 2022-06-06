@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const LogInFormPageStyled = styled.div`
-  margin: 30px 10px;
+  margin: 70px 10px 30px 10px;
   text-align: center;
   font-family: inherit;
   .page-title {

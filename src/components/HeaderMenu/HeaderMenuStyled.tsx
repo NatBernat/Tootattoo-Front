@@ -8,7 +8,9 @@ const HeaderMenuStyled = styled.header`
       min-width: 150px;
     }
   }
-
+  Link {
+    text-decoration: none;
+  }
   p {
     color: #000;
     font-size: 1.5em;
@@ -16,7 +18,8 @@ const HeaderMenuStyled = styled.header`
   }
   background-color: #fff;
   box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.3);
-  position: sticky;
+  position: fixed;
+  top: 0;
   width: 100%;
   z-index: 3;
   ul {
