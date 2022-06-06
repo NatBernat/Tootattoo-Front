@@ -4,9 +4,11 @@ const TattooItemStyled = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 220px;
-  height: 220px;
-  border-radius: 3%;
+  width: 90vw;
+  height: 90vw;
+  max-width: 300px;
+  max-height: 300px;
+  border-radius: 8px;
   cursor: pointer;
   overflow: hidden;
 

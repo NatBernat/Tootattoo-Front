@@ -1,13 +1,22 @@
 import styled from "styled-components";
 
 const HeaderMenuStyled = styled.header`
+  h1 {
+    cursor: pointer;
+    img {
+      width: 25vw;
+      min-width: 150px;
+    }
+  }
+
   p {
     color: #000;
     font-size: 1.5em;
+    cursor: pointer;
   }
   background-color: #fff;
   box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.3);
-  position: fixed;
+  position: sticky;
   width: 100%;
   z-index: 3;
   ul {
@@ -31,8 +40,7 @@ const HeaderMenuStyled = styled.header`
     display: block;
     max-width: 300px;
     float: left;
-    font-size: 2em;
-    padding: 10px 20px;
+    padding: 10px 0 10px 20px;
     text-decoration: none;
   }
 
@@ -67,11 +75,11 @@ const HeaderMenuStyled = styled.header`
       transition: all 0.2s ease-out;
       width: 100%;
     }
-    .menu-icon .navicon:before {
+    .navicon:before {
       top: 5px;
     }
 
-    .menu-icon .navicon:after {
+    .navicon:after {
       top: -5px;
     }
   }
@@ -101,7 +109,7 @@ const HeaderMenuStyled = styled.header`
 
   /* 48em = 768px */
 
-  @media (min-width: 48em) {
+  @media (max-width: 450px) {
     .header li {
       float: left;
     }
