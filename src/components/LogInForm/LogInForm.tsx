@@ -50,12 +50,14 @@ const LogInForm = (): JSX.Element => {
       <form noValidate autoComplete="off" onSubmit={submitLogin}>
         <label htmlFor="username"> Username </label>
         <input
+          placeholder="username"
           id="username"
           value={formData.username}
           onChange={changeFormData}
         />
         <label htmlFor="password"> Password </label>
         <input
+          placeholder="password"
           id="password"
           type="password"
           value={formData.password}
