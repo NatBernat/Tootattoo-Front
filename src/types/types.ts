@@ -1,3 +1,7 @@
+/* export interface ILoading {
+  loading: boolean;
+}
+ */
 export interface ILogInForm {
   username: string;
   password: string;
@@ -25,6 +29,10 @@ export interface ITattoo {
   creator: string;
   creationDate: string;
   tags: string[];
+}
+
+export interface ITokenInfo {
+  username: string;
 }
 
 export interface IUserState {
