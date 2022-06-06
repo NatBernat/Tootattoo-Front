@@ -2,12 +2,12 @@ import styled from "styled-components";
 
 const AppStyled = styled.div`
   header * {
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     img {
-      width: 60vw;
-      max-width: fit-content;
+      width: 65vw;
+      max-width: 500px;
     }
   }
   .copyrigth {
