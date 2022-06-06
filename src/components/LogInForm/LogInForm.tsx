@@ -33,7 +33,7 @@ const LogInForm = (): JSX.Element => {
     dispatch(loginUserThunk(dispatchedData));
     const token = localStorage.getItem("token");
     if (token) {
-      navigate("/public-list");
+      navigate("/");
     }
   };
 
