@@ -23,7 +23,7 @@ const HeaderMenuStyled = styled.header`
 
   p {
     color: #000;
-    font-size: 1.5em;
+    font-size: 1.4em;
     cursor: pointer;
   }
 
@@ -44,7 +44,7 @@ const HeaderMenuStyled = styled.header`
 
   li p:hover,
   .menu-btn:hover {
-    background-color: #f4f4f4;
+    background-color: #e6e6e6;
   }
 
   .logo {

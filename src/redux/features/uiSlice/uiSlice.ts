@@ -6,8 +6,8 @@ const uiSlice = createSlice({
     loading: false,
   },
   reducers: {
-    loading: (ui, action) => ({ ...ui, loading: true }),
-    finishedLoading: (ui, action) => ({ ...ui, loading: false }),
+    loading: (ui) => ({ ...ui, loading: true }),
+    finishedLoading: (ui) => ({ ...ui, loading: false }),
   },
 });
 
