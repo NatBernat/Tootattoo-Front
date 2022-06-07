@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { ITattoo } from "../../types/types";
-import TattooItem from "../../components/TattooItem/TattooItem";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks/hooks";
 import { loadTattoosThunk } from "../../redux/thunks/tattoosThunks/tattoosThunks";
 import AddedListPageStyled from "./AddedListPageStyled";
+import TattooAddedItem from "../../components/TattooAddedItem/TattooAddedItem";
 
 const AddedListPage = (): JSX.Element => {
   const dispatch = useAppDispatch();
@@ -17,7 +17,7 @@ const AddedListPage = (): JSX.Element => {
     <AddedListPageStyled className="page">
       <h2 className="page-title">My tattoos</h2>
       {tattoos.map((tattoo) => {
-        return <TattooItem key={tattoo._id} tattoo={tattoo} />;
+        return <TattooAddedItem key={tattoo._id} tattoo={tattoo} />;
       })}
     </AddedListPageStyled>
   );

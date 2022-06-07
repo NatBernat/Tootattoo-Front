@@ -2,14 +2,16 @@ import { ITattoo } from "../../types/types";
 import TattooItemStyled from "./TattooItemStyled";
 
 const TattooItem = ({
-  tattoo: { image, title },
+  tattoo: { _id, image, title },
 }: {
   tattoo: ITattoo;
 }): JSX.Element => {
   return (
-    <TattooItemStyled>
-      <img className="tattoo" src={image} alt={title} title={title} />
-    </TattooItemStyled>
+    <>
+      <TattooItemStyled>
+        <img className="tattoo" src={image} alt={title} title={title} />
+      </TattooItemStyled>
+    </>
   );
 };
 

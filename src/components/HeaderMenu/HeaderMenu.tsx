@@ -18,8 +18,8 @@ const HeaderMenu = (): JSX.Element => {
 
   const dispatch = useAppDispatch();
   const logOutUser = () => {
-    dispatch(logOutUserThunk());
     closeMenu();
+    dispatch(logOutUserThunk());
   };
 
   return (
