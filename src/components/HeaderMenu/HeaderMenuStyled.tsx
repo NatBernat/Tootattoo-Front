@@ -118,19 +118,20 @@ const HeaderMenuStyled = styled.header`
     }
   }
 
-  @media (max-width: 450px) {
-    .header li {
+  @media (min-width: 620px) {
+    li {
       float: left;
     }
-    .header li p {
-      padding: 20px 30px;
+    li p {
+      font-size: 1.15em;
+      padding: 20px 20px;
     }
-    .header .menu {
+    .menu {
       clear: none;
       float: right;
       max-height: none;
     }
-    .header .menu-icon {
+    .menu-icon {
       display: none;
     }
   }

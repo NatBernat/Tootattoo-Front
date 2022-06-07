@@ -2,7 +2,15 @@ import styled from "styled-components";
 
 const AppStyled = styled.div`
   .page {
-    margin: 70px 10px 30px 10px;
+    margin: 10px;
+  }
+  .page-title {
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    margin: 70px 0 10px 0;
+    font-size: 1.5em;
+    font-weight: normal;
   }
   .not-found-page {
     margin: 25vh auto;

@@ -12,7 +12,7 @@ const LoginFormStyled = styled.section`
   margin: 0 auto;
   width: 100%;
   max-width: 500px;
-  font-size: 1.5em;
+  font-size: 1.4em;
 
   form {
     display: flex;
