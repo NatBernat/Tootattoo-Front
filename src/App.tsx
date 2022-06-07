@@ -24,7 +24,7 @@ const App = (): JSX.Element => {
     }
   }, [dispatch]);
 
-  const loading = useAppSelector((state) => state.ui.loading);
+  const loading: boolean = useAppSelector((state) => state.ui.loading);
   return (
     <AppStyled className="App">
       <HeaderMenu />
