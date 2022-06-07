@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const PublicListPageStyled = styled.ul`
+const AddedListPageStyled = styled.ul`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -10,7 +10,7 @@ const PublicListPageStyled = styled.ul`
   list-style: none;
   padding: 0px;
 
-  .greeting {
+  .page-title {
     display: flex;
     width: 100vw;
     justify-content: center;
@@ -18,4 +18,4 @@ const PublicListPageStyled = styled.ul`
   }
 `;
 
-export default PublicListPageStyled;
+export default AddedListPageStyled;

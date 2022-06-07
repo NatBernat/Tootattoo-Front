@@ -55,8 +55,8 @@ describe("Given a LoginForm component", () => {
       const usernameinputText = "randomUsername";
       userEvent.type(usernameInput, usernameinputText);
       const passwordInput = screen.getByPlaceholderText("password");
-      const passswordInputText = "randomUsername";
-      userEvent.type(passwordInput, passswordInputText);
+      const passwordInputText = "randomPassword";
+      userEvent.type(passwordInput, passwordInputText);
       const loginButton = screen.getByRole("button", { name: "Log In" });
       userEvent.click(loginButton);
 

@@ -1,14 +1,14 @@
 import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
 import store from "../../redux/store/store";
-import PublicListPage from "./PublicListPage";
+import AddedListPage from "./AddedListPage";
 
-describe("Given PublicListPage component", () => {
+describe("Given AddedListPage component", () => {
   describe("When it's instantiated", () => {
     test("Then it should render a list", () => {
       render(
         <Provider store={store}>
-          <PublicListPage />
+          <AddedListPage />
         </Provider>
       );
 

@@ -1,6 +1,6 @@
 import { ChangeEvent, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useAppDispatch } from "../../redux/hooks/hooks";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks/hooks";
 import { AppDispatch } from "../../redux/store/store";
 import { loginUserThunk } from "../../redux/thunks/userThunks/userThunks";
 import { ILogInForm } from "../../types/types";
@@ -28,6 +28,10 @@ const LogInForm = (): JSX.Element => {
   };
 
   const navigate = useNavigate();
+  const logged = useAppSelector((state) => state.user.logged);
+  useEffect(() => {
+    if (logged) navigate("/");
+  }, [logged, navigate]);
 
   const dispatch: AppDispatch = useAppDispatch();
   const submitLogin = (event: React.SyntheticEvent) => {
@@ -36,10 +40,6 @@ const LogInForm = (): JSX.Element => {
     resetForm();
 
     dispatch(loginUserThunk(dispatchedData));
-    const token = localStorage.getItem("token");
-    if (token) {
-      navigate("/");
-    }
   };
 
   return (

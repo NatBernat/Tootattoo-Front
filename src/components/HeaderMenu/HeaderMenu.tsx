@@ -1,7 +1,18 @@
 import { Link } from "react-router-dom";
+
+import { useAppDispatch, useAppSelector } from "../../redux/hooks/hooks";
+import { logOutUserThunk } from "../../redux/thunks/userThunks/userThunks";
 import HeaderMenuStyled from "./HeaderMenuStyled";
 
 const HeaderMenu = (): JSX.Element => {
+  const logged = useAppSelector((state) => state.user.logged);
+
+  const dispatch = useAppDispatch();
+
+  const logOutUser = () => {
+    dispatch(logOutUserThunk());
+  };
+
   return (
     <HeaderMenuStyled className="header">
       <Link to="/">
@@ -14,21 +25,31 @@ const HeaderMenu = (): JSX.Element => {
         <span className="navicon"></span>
       </label>
       <ul className="menu">
-        <li>
-          <Link to="/login" className="header-link">
-            <p>Account</p>
-          </Link>
-        </li>
-        <li>
-          <Link to="/favourites" className="header-link">
-            <p>Favourites</p>
-          </Link>
-        </li>
-        <li>
-          <Link to="/uploads" className="header-link">
-            <p>Uploads</p>
-          </Link>
-        </li>
+        {logged ? (
+          <>
+            <li>
+              <Link to="/myfavourites" className="header-link">
+                <p>Favourites</p>
+              </Link>
+            </li>
+            <li>
+              <Link to="/mytattoos" className="header-link">
+                <p>My tattoos</p>
+              </Link>
+            </li>
+            <li>
+              <Link to="/" className="header-link" onClick={logOutUser}>
+                <p>Log out</p>
+              </Link>
+            </li>
+          </>
+        ) : (
+          <li>
+            <Link to="/login" className="header-link">
+              <p>Log in</p>
+            </Link>
+          </li>
+        )}
       </ul>
     </HeaderMenuStyled>
   );
