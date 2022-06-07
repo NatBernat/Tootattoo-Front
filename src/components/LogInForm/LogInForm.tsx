@@ -65,7 +65,9 @@ const LogInForm = (): JSX.Element => {
         </button>
       </form>
       <Link className="redirect-link" to="/register">
-        Register
+        No account yet?
+        <br />
+        <span className="redirect-link__keyword">Register</span>
       </Link>
     </LogInFormStyled>
   );

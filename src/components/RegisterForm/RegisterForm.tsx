@@ -72,7 +72,9 @@ const RegisterForm = (): JSX.Element => {
         <button type="submit">Register</button>
       </form>
       <Link className="redirect-link" to="/login">
-        Login
+        Already registered?
+        <br />
+        <span className="redirect-link__keyword">Log in</span>
       </Link>
     </LoginFormStyled>
   );
