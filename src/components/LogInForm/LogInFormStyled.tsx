@@ -55,16 +55,26 @@ const LoginFormStyled = styled.section`
     }
   }
 
-  .register-button {
+  .redirect-link {
+    text-decoration: none;
     background-color: inherit;
     border: 1px solid #c5958f;
-    color: #1b1b1e;
-  }
-
-  .login-button {
-    background-color: inherit;
-    border: 1px solid #c5958f;
-    color: #1b1b1e;
+    color: black;
+    margin: 10px;
+    width: 60%;
+    height: 50px;
+    padding: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1em;
+    :hover {
+      background-color: #81625d;
+      color: white;
+    }
+    :active {
+      background-color: #3d2e2c;
+      color: white;
+    }
   }
 `;
 

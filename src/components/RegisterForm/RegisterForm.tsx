@@ -1,5 +1,5 @@
 import { ChangeEvent, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../redux/hooks/hooks";
 import { AppDispatch } from "../../redux/store/store";
 import { registerUserThunk } from "../../redux/thunks/userThunks/userThunks";
@@ -25,9 +25,6 @@ const RegisterForm = (): JSX.Element => {
   };
 
   const navigate = useNavigate();
-  const redirectLogin = () => {
-    navigate("/login");
-  };
 
   const dispatch: AppDispatch = useAppDispatch();
 
@@ -37,19 +34,21 @@ const RegisterForm = (): JSX.Element => {
 
     resetForm();
     dispatch(registerUserThunk(dispatchedData));
-    redirectLogin();
+    navigate("/login");
   };
   return (
     <LoginFormStyled>
       <form noValidate autoComplete="off" onSubmit={submitRegister}>
         <label htmlFor="username"> Username </label>
         <input
+          placeholder="username"
           id="username"
           value={formData.username}
           onChange={changeFormData}
         />
         <label htmlFor="password"> Password </label>
         <input
+          placeholder="password"
           id="password"
           type="password"
           value={formData.password}
@@ -57,18 +56,24 @@ const RegisterForm = (): JSX.Element => {
         />
         <label htmlFor="fullname"> Full name </label>
         <input
+          placeholder="full name"
           id="fullname"
           value={formData.fullname}
           onChange={changeFormData}
         />
         <label htmlFor="email"> E-mail </label>
-        <input id="email" value={formData.email} onChange={changeFormData} />
+        <input
+          placeholder="e-mail"
+          id="email"
+          value={formData.email}
+          onChange={changeFormData}
+        />
 
         <button type="submit">Register</button>
       </form>
-      <button className="login-button" onClick={redirectLogin}>
+      <Link className="redirect-link" to="/login">
         Login
-      </button>
+      </Link>
     </LoginFormStyled>
   );
 };
