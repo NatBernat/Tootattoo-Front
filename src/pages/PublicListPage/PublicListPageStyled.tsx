@@ -14,7 +14,8 @@ const PublicListPageStyled = styled.ul`
     display: flex;
     width: 100vw;
     justify-content: center;
-    margin: 1% 0 0 0;
+    margin: 70px 0 0 0;
+    padding: 0;
   }
 `;
 

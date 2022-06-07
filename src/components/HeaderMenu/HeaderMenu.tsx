@@ -7,15 +7,24 @@ import HeaderMenuStyled from "./HeaderMenuStyled";
 const HeaderMenu = (): JSX.Element => {
   const logged = useAppSelector((state) => state.user.logged);
 
-  const dispatch = useAppDispatch();
+  const checkBox = document.getElementById(
+    "menu-btn"
+  ) as HTMLInputElement | null;
+  const closeMenu = () => {
+    if (checkBox?.checked) {
+      checkBox.click();
+    }
+  };
 
+  const dispatch = useAppDispatch();
   const logOutUser = () => {
     dispatch(logOutUserThunk());
+    closeMenu();
   };
 
   return (
     <HeaderMenuStyled className="header">
-      <Link to="/">
+      <Link to="/" onClick={closeMenu}>
         <h1 title="Tootattoo" className="logo">
           <img src="./images/textLogo.svg" alt="Tootattoo logo" />
         </h1>
@@ -28,12 +37,16 @@ const HeaderMenu = (): JSX.Element => {
         {logged ? (
           <>
             <li>
-              <Link to="/myfavourites" className="header-link">
+              <Link
+                to="/myfavourites"
+                className="header-link"
+                onClick={closeMenu}
+              >
                 <p>Favourites</p>
               </Link>
             </li>
             <li>
-              <Link to="/mytattoos" className="header-link">
+              <Link to="/mytattoos" className="header-link" onClick={closeMenu}>
                 <p>My tattoos</p>
               </Link>
             </li>
@@ -45,7 +58,7 @@ const HeaderMenu = (): JSX.Element => {
           </>
         ) : (
           <li>
-            <Link to="/login" className="header-link">
+            <Link to="/login" className="header-link" onClick={closeMenu}>
               <p>Log in</p>
             </Link>
           </li>

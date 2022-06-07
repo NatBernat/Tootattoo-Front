@@ -4,10 +4,6 @@ const LogInFormPageStyled = styled.div`
   margin: 70px 10px 30px 10px;
   text-align: center;
   font-family: inherit;
-  .page-title {
-    font-size: 2em;
-    margin: 10px;
-  }
 `;
 
 export default LogInFormPageStyled;
