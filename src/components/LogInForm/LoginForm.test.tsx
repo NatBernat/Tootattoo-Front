@@ -63,21 +63,4 @@ describe("Given a LoginForm component", () => {
       expect(mockDispatch).toHaveBeenCalled();
     });
   });
-
-  describe("When it's invoked and an user clicks on the 'Register' button", () => {
-    test("Then it should call the navigate function", () => {
-      render(
-        <BrowserRouter>
-          <Provider store={store}>
-            <LogInForm />
-          </Provider>
-        </BrowserRouter>
-      );
-
-      const registerButton = screen.getByRole("button", { name: "Register" });
-      userEvent.click(registerButton);
-
-      expect(mockNavigate).toHaveBeenCalled();
-    });
-  });
 });

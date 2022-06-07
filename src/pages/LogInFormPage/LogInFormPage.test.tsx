@@ -6,9 +6,7 @@ import LogInFormPage from "./LogInFormPage";
 
 describe("Given LogInFormPage component", () => {
   describe("When it's instantiated", () => {
-    test("Then it should render 2 buttons", () => {
-      const expectedLength = 2;
-
+    test("Then it should render a button", () => {
       render(
         <BrowserRouter>
           <Provider store={store}>
@@ -17,9 +15,9 @@ describe("Given LogInFormPage component", () => {
         </BrowserRouter>
       );
 
-      const testedButtons = screen.getAllByRole("button");
+      const testedButtons = screen.getByRole("button");
 
-      expect(testedButtons).toHaveLength(expectedLength);
+      expect(testedButtons).toBeInTheDocument();
     });
   });
 });

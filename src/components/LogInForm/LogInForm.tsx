@@ -1,5 +1,5 @@
 import { ChangeEvent, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../redux/hooks/hooks";
 import { AppDispatch } from "../../redux/store/store";
 import { loginUserThunk } from "../../redux/thunks/userThunks/userThunks";
@@ -28,9 +28,6 @@ const LogInForm = (): JSX.Element => {
   };
 
   const navigate = useNavigate();
-  const redirectRegister = () => {
-    navigate("/register");
-  };
 
   const dispatch: AppDispatch = useAppDispatch();
   const submitLogin = (event: React.SyntheticEvent) => {
@@ -67,9 +64,9 @@ const LogInForm = (): JSX.Element => {
           Log In
         </button>
       </form>
-      <button className="register-button" onClick={redirectRegister}>
+      <Link className="redirect-link" to="/register">
         Register
-      </button>
+      </Link>
     </LogInFormStyled>
   );
 };
