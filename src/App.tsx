@@ -25,7 +25,7 @@ const App = (): JSX.Element => {
   const logged = useAppSelector((state) => state.user.logged);
   const token = localStorage.getItem("token");
   useEffect(() => {
-    if (logged && token) {
+    if (token) {
       const userInfo: ITokenInfo = jwtDecode(token);
       dispatch(loginActionCreator(userInfo));
     } else {
