@@ -6,6 +6,7 @@ import HeaderMenu from "./components/HeaderMenu/HeaderMenu";
 import Loading from "./components/Loading/Loading";
 import LoggedCheck from "./components/LoggedChecked/LoggedCheck";
 import AddedListPage from "./pages/AddedListPage/AddedListPage";
+import FavouritesListPage from "./pages/FavouritesListPage/FavouritesListPage";
 import LogInFormPage from "./pages/LogInFormPage/LogInFormPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import PublicListPage from "./pages/PublicListPage/PublicListPage";
@@ -47,6 +48,14 @@ const App = (): JSX.Element => {
           element={
             <LoggedCheck>
               <AddedListPage />
+            </LoggedCheck>
+          }
+        />
+        <Route
+          path="/myfavourites"
+          element={
+            <LoggedCheck>
+              <FavouritesListPage />
             </LoggedCheck>
           }
         />

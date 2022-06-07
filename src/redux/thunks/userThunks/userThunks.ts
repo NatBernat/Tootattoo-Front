@@ -7,7 +7,6 @@ import {
   IRegisterResponse,
   ILoginResponse,
   IUserInfo,
-  ITokenInfo,
 } from "../../../types/types";
 import {
   loginActionCreator,
@@ -46,9 +45,8 @@ export const registerUserThunk =
     }
   };
 
-export const logOutUserThunk =
-  (userInfo: ITokenInfo) => (dispatch: AppDispatch) => {
-    localStorage.removeItem("token");
+export const logOutUserThunk = () => (dispatch: AppDispatch) => {
+  localStorage.removeItem("token");
 
-    dispatch(logoutActionCreator());
-  };
+  dispatch(logoutActionCreator());
+};
