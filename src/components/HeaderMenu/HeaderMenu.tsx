@@ -25,8 +25,8 @@ const HeaderMenu = (): JSX.Element => {
           </Link>
         </li>
         <li>
-          <Link to="/uploads" className="header-link">
-            <p>Uploads</p>
+          <Link to="/mytattoos" className="header-link">
+            <p>My tattoos</p>
           </Link>
         </li>
       </ul>

@@ -45,13 +45,16 @@ const LoginFormStyled = styled.section`
     cursor: pointer;
     font-family: inherit;
     font-size: 1em;
-    :hover {
+    :hover:enabled {
       background-color: #81625d;
       color: white;
     }
-    :active {
+    :active:enabled {
       background-color: #3d2e2c;
       color: white;
+    }
+    :disabled {
+      color: gray;
     }
   }
 
@@ -69,8 +72,6 @@ const LoginFormStyled = styled.section`
     .redirect-link__keyword {
       text-decoration: underline;
       font-weight: bold;
-    }
-    :active {
     }
   }
 `;

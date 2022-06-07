@@ -1,29 +1,26 @@
 import { useEffect } from "react";
+import { ITattoo } from "../../types/types";
 import TattooItem from "../../components/TattooItem/TattooItem";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks/hooks";
 import { loadTattoosThunk } from "../../redux/thunks/tattoosThunks/tattoosThunks";
-import { ITattoo } from "../../types/types";
+import AddedListPageStyled from "./AddedListPageStyled";
 
-import PublicListPageStyled from "./PublicListPageStyled";
-
-const PublicListPage = (): JSX.Element => {
+const AddedListPage = (): JSX.Element => {
   const dispatch = useAppDispatch();
   const tattoos: ITattoo[] = useAppSelector((state) => state.tattoos);
-  const logged = useAppSelector((state) => state.user.logged);
-  const loggedUsername = useAppSelector((state) => state.user.username);
 
   useEffect(() => {
     dispatch(loadTattoosThunk());
   }, [dispatch]);
 
   return (
-    <PublicListPageStyled className="page">
-      {<p className="greeting">{logged ? `Welcome @${loggedUsername}` : ""}</p>}
+    <AddedListPageStyled className="page">
+      <h2 className="page-title">My tattoos</h2>
       {tattoos.map((tattoo) => {
         return <TattooItem key={tattoo._id} tattoo={tattoo} />;
       })}
-    </PublicListPageStyled>
+    </AddedListPageStyled>
   );
 };
 
-export default PublicListPage;
+export default AddedListPage;
