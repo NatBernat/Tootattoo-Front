@@ -4,7 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import AppStyled from "./AppStyled";
 import HeaderMenu from "./components/HeaderMenu/HeaderMenu";
 import Loading from "./components/Loading/Loading";
-import LoggedCheck from "./components/LoggedCheck";
+import LoggedCheck from "./components/LoggedChecked/LoggedCheck";
 import AddedListPage from "./pages/AddedListPage/AddedListPage";
 import LogInFormPage from "./pages/LogInFormPage/LogInFormPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
