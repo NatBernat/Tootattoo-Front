@@ -50,27 +50,22 @@ describe("Given a RegisterForm component", () => {
         </BrowserRouter>
       );
 
+      const usernameInput = screen.getByPlaceholderText("username");
+      const usernameinputText = "randomUsername";
+      userEvent.type(usernameInput, usernameinputText);
+      const passwordInput = screen.getByPlaceholderText("password");
+      const passwordInputText = "randomPassword";
+      userEvent.type(passwordInput, passwordInputText);
+      const fullnameInput = screen.getByPlaceholderText("full name");
+      const fullnameinputText = "randomUsername";
+      userEvent.type(fullnameInput, fullnameinputText);
+      const emailInput = screen.getByPlaceholderText("e-mail");
+      const emailInputText = "randomPassword";
+      userEvent.type(emailInput, emailInputText);
       const registerButton = screen.getByRole("button", { name: "Register" });
       userEvent.click(registerButton);
 
       expect(mockDispatch).toHaveBeenCalled();
-    });
-  });
-
-  describe("When it's invoked and an user clicks on the 'Login' button", () => {
-    test("Then it should call the navigate function", () => {
-      render(
-        <BrowserRouter>
-          <Provider store={store}>
-            <RegisterForm />
-          </Provider>
-        </BrowserRouter>
-      );
-
-      const registerButton = screen.getByRole("button", { name: "Register" });
-      userEvent.click(registerButton);
-
-      expect(mockNavigate).toHaveBeenCalled();
     });
   });
 });
