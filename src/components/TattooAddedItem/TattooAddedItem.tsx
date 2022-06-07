@@ -18,8 +18,9 @@ const TattooAddedItem = ({
       <TattooAddedItemStyled>
         <img className="tattoo" src={image} alt={title} title={title} />
         <button className="delete-button" onClick={deleteTattoo}>
-          DILIT
+          DELETE
         </button>
+        <button className="edit-button">EDIT</button>
       </TattooAddedItemStyled>
     </>
   );

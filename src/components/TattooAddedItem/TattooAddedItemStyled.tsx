@@ -20,8 +20,26 @@ const TattooAddedItemStyled = styled.li`
   :hover img {
     transform: scale(1.1);
   }
-  .delete-button {
+  button {
+    cursor: pointer;
     position: absolute;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    left: 0;
+    right: 0;
+    font-family: inherit;
+    :hover {
+      font-weight: bolder;
+    }
+  }
+
+  .edit-button {
+    bottom: 0;
+  }
+  .delete-button {
+    top: 0;
   }
 `;
 
