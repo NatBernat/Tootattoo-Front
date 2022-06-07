@@ -8,7 +8,10 @@ import LogInFormPage from "./pages/LogInFormPage/LogInFormPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import PublicListPage from "./pages/PublicListPage/PublicListPage";
 import RegisterFormPage from "./pages/RegisterFormPage/RegisterFormPage";
-import { loginActionCreator } from "./redux/features/userSlice/userSlice";
+import {
+  loginActionCreator,
+  logoutActionCreator,
+} from "./redux/features/userSlice/userSlice";
 import { useAppDispatch, useAppSelector } from "./redux/hooks/hooks";
 import { ITokenInfo } from "./types/types";
 
@@ -21,6 +24,8 @@ const App = (): JSX.Element => {
     if (token) {
       const userInfo: ITokenInfo = jwtDecode(token);
       dispatch(loginActionCreator(userInfo));
+    } else {
+      dispatch(logoutActionCreator());
     }
   }, [dispatch]);
 

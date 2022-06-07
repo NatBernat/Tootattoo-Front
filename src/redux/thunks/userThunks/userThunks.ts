@@ -7,8 +7,12 @@ import {
   IRegisterResponse,
   ILoginResponse,
   IUserInfo,
+  ITokenInfo,
 } from "../../../types/types";
-import { loginActionCreator } from "../../features/userSlice/userSlice";
+import {
+  loginActionCreator,
+  logoutActionCreator,
+} from "../../features/userSlice/userSlice";
 import { AppDispatch } from "../../store/store";
 
 export const loginUserThunk =
@@ -40,4 +44,11 @@ export const registerUserThunk =
     } catch (error: any) {
       toast.error("User could not be registered");
     }
+  };
+
+export const logOutUserThunk =
+  (userInfo: ITokenInfo) => (dispatch: AppDispatch) => {
+    localStorage.removeItem("token");
+
+    dispatch(logoutActionCreator());
   };
