@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../redux/hooks/hooks";
 import { AppDispatch } from "../../redux/store/store";
@@ -19,6 +19,20 @@ const RegisterForm = (): JSX.Element => {
   const changeFormData = (event: ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [event.target.id]: event.target.value });
   };
+
+  const [buttonDisable, setButtonDisable] = useState(true);
+  useEffect(() => {
+    if (
+      formData.username !== "" &&
+      formData.password !== "" &&
+      formData.fullname !== "" &&
+      formData.email !== ""
+    ) {
+      setButtonDisable(false);
+    } else {
+      setButtonDisable(true);
+    }
+  }, [formData]);
 
   const resetForm = () => {
     setFormData(formInitialState);
@@ -69,7 +83,9 @@ const RegisterForm = (): JSX.Element => {
           onChange={changeFormData}
         />
 
-        <button type="submit">Register</button>
+        <button disabled={buttonDisable} type="submit">
+          Register
+        </button>
       </form>
       <Link className="redirect-link" to="/login">
         Already registered?

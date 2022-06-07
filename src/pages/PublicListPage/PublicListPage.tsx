@@ -18,7 +18,11 @@ const PublicListPage = (): JSX.Element => {
 
   return (
     <PublicListPageStyled className="page">
-      {<p className="greeting">{logged ? `Welcome @${loggedUsername}` : ""}</p>}
+      {
+        <p className="greeting">
+          {logged ? `Logged as @${loggedUsername}` : ""}
+        </p>
+      }
       {tattoos.map((tattoo) => {
         return <TattooItem key={tattoo._id} tattoo={tattoo} />;
       })}

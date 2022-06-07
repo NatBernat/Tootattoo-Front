@@ -24,10 +24,10 @@ export const loginUserThunk =
       );
 
       localStorage.setItem("token", token);
-      toast.success("Log In succesful");
 
       const decodedInfo: IUserInfo = jwtDecode(token);
       dispatch(loginActionCreator(decodedInfo));
+      toast.success(`Welcome @${decodedInfo.username}`);
     } catch (error: any) {
       toast.error("Username or password are wrong");
     }
@@ -47,6 +47,6 @@ export const registerUserThunk =
 
 export const logOutUserThunk = () => (dispatch: AppDispatch) => {
   localStorage.removeItem("token");
-
+  toast.success("Logging out succesful");
   dispatch(logoutActionCreator());
 };
