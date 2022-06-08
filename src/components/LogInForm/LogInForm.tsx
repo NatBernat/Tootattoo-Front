@@ -30,7 +30,7 @@ const LogInForm = (): JSX.Element => {
   const navigate = useNavigate();
   const logged = useAppSelector((state) => state.user.logged);
   useEffect(() => {
-    if (logged) navigate("/");
+    if (logged) navigate("/public-list");
   }, [logged, navigate]);
 
   const dispatch: AppDispatch = useAppDispatch();

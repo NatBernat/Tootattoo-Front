@@ -1,10 +1,11 @@
 import jwtDecode from "jwt-decode";
 import { useEffect } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import AppStyled from "./AppStyled";
 import HeaderMenu from "./components/HeaderMenu/HeaderMenu";
 import Loading from "./components/Loading/Loading";
-import LoggedCheck from "./components/LoggedChecked/LoggedCheck";
+import LoggedCheck from "./components/LoggedCheck/LoggedCheck";
+import UnloggedCheck from "./components/UnloggedCheck/UnloggedCheck";
 import AddedListPage from "./pages/AddedListPage/AddedListPage";
 import FavouritesListPage from "./pages/FavouritesListPage/FavouritesListPage";
 import LogInFormPage from "./pages/LogInFormPage/LogInFormPage";
@@ -40,8 +41,23 @@ const App = (): JSX.Element => {
       <HeaderMenu />
       <Routes>
         <Route path="/" element={<PublicListPage />} />
-        <Route path="/login" element={<LogInFormPage />} />
-        <Route path="/register" element={<RegisterFormPage />} />
+        <Route path="/public-list" element={<Navigate to="/" />} />
+        <Route
+          path="/login"
+          element={
+            <UnloggedCheck>
+              <LogInFormPage />
+            </UnloggedCheck>
+          }
+        />
+        <Route
+          path="/register"
+          element={
+            <UnloggedCheck>
+              <RegisterFormPage />
+            </UnloggedCheck>
+          }
+        />
         <Route
           path="/mytattoos"
           element={

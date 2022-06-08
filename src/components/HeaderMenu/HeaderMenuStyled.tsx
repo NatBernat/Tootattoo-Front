@@ -13,7 +13,7 @@ const HeaderMenuStyled = styled.header`
     img {
       width: 25vw;
       min-width: 150px;
-      max-width: 500px;
+      max-height: 50px;
     }
   }
 
