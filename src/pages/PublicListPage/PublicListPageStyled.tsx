@@ -9,14 +9,6 @@ const PublicListPageStyled = styled.ul`
   gap: 20px;
   list-style: none;
   padding: 0px;
-
-  .greeting {
-    display: flex;
-    width: 100vw;
-    justify-content: center;
-    margin: 70px 0 0 0;
-    padding: 0;
-  }
 `;
 
 export default PublicListPageStyled;

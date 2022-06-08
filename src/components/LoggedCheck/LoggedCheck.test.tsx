@@ -1,5 +1,4 @@
 import { render, screen } from "@testing-library/react";
-import AddedListPage from "../../pages/AddedListPage/AddedListPage";
 
 import LoggedCheck from "./LoggedCheck";
 
