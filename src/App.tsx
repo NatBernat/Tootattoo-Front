@@ -39,7 +39,6 @@ const App = (): JSX.Element => {
   return (
     <AppStyled className="App">
       <HeaderMenu />
-      {loading && <Loading />}
       <Routes>
         <Route path="/" element={<PublicListPage />} />
         <Route path="/public-list" element={<Navigate to="/" />} />
@@ -77,6 +76,7 @@ const App = (): JSX.Element => {
         />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
+      {loading && <Loading />}
       <p className="copyrigth">© 2022 Tootattoo.</p>
     </AppStyled>
   );
