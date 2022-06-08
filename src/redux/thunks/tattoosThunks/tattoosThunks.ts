@@ -10,6 +10,11 @@ import {
 import { toast } from "react-toastify";
 import { AppDispatch } from "../../store/store";
 
+const getAuthHeader = () => {
+  const token = localStorage.getItem("token");
+  return { headers: { Authorization: `Bearer ${token}` } };
+};
+
 export const loadTattoosThunk = () => async (dispatch: AppDispatch) => {
   try {
     dispatch(loadingActionCreator());
@@ -29,7 +34,7 @@ export const deleteTattooThunk =
     try {
       const deleteToast = toast.loading("Deleting...", { isLoading: true });
       const route = `${process.env.REACT_APP_API_URL}tattoos/${id}`;
-      await axios.delete(route);
+      await axios.delete(route, getAuthHeader());
 
       dispatch(deleteTattooActionCreator(id));
       toast.update(deleteToast, {
