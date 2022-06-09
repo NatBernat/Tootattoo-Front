@@ -31,17 +31,22 @@ export const loadTattoosThunk = () => async (dispatch: AppDispatch) => {
 
 export const deleteTattooThunk =
   (id: string) => async (dispatch: AppDispatch) => {
+    const deleteToast = toast.loading("Deleting...", { isLoading: true });
     try {
-      const deleteToast = toast.loading("Deleting...", { isLoading: true });
       const route = `${process.env.REACT_APP_API_URL}tattoos/${id}`;
       await axios.delete(route, getAuthHeader());
 
-      dispatch(deleteTattooActionCreator(id));
       toast.update(deleteToast, {
         isLoading: false,
         autoClose: 100,
       });
+
+      dispatch(deleteTattooActionCreator(id));
     } catch (error: any) {
+      toast.update(deleteToast, {
+        isLoading: false,
+        autoClose: 100,
+      });
       toast.error("Tattoo couldn't be removed, try again later");
     }
   };
