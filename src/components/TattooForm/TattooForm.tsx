@@ -1,26 +1,23 @@
-import { useAppSelector } from "../../redux/hooks/hooks";
+import TattooFormStyled from "./TattooFormStyled";
 
 const TattooForm = (): JSX.Element => {
-  const username = useAppSelector((state) => state.user.username);
-
   return (
-    <>
+    <TattooFormStyled>
       <form noValidate autoComplete="off">
         <label htmlFor="image">Image</label>
-        <button id="image-button">Open</button>
-        <input id="file-input" type="file" name="image" />
+        <input
+          id="image-input"
+          type="file"
+          name="image"
+          accept=".jpg,.jpeg,.png"
+        />
         <label htmlFor="title">Title</label>
         <input placeholder="tattoo title" id="title" />
-        <label htmlFor="creator">usename creator</label>
-        <input
-          placeholder="tattoo owner"
-          id="creator"
-          value={username}
-          disabled
-        />
+        <label htmlFor="title">Tags</label>
+        <input placeholder="tags" id="tags" />
         <button type="submit">Submit tattoo</button>
       </form>
-    </>
+    </TattooFormStyled>
   );
 };
 
