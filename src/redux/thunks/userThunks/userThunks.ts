@@ -69,6 +69,6 @@ export const registerUserThunk =
 
 export const logOutUserThunk = () => (dispatch: AppDispatch) => {
   localStorage.removeItem("token");
-  toast.success("Logging out succesful");
+  toast.success("Logged out");
   dispatch(logoutActionCreator());
 };

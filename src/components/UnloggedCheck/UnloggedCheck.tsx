@@ -15,11 +15,7 @@ const UnloggedCheck = ({ children }: ChildrenProp) => {
     if (logged) navigate("/public-list");
   }, [logged, navigate]);
 
-  if (!logged) {
-    return children;
-  } else {
-    return null;
-  }
+  return children;
 };
 
 export default UnloggedCheck;

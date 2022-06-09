@@ -1,6 +1,6 @@
 import { ChangeEvent, useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "../../redux/hooks/hooks";
+import { Link } from "react-router-dom";
+import { useAppDispatch } from "../../redux/hooks/hooks";
 import { AppDispatch } from "../../redux/store/store";
 import { loginUserThunk } from "../../redux/thunks/userThunks/userThunks";
 import { ILogInForm } from "../../types/types";
@@ -26,12 +26,6 @@ const LogInForm = (): JSX.Element => {
   const resetForm = () => {
     setFormData(formInitialState);
   };
-
-  const navigate = useNavigate();
-  const logged = useAppSelector((state) => state.user.logged);
-  useEffect(() => {
-    if (logged) navigate("/public-list");
-  }, [logged, navigate]);
 
   const dispatch: AppDispatch = useAppDispatch();
   const submitLogin = (event: React.SyntheticEvent) => {
