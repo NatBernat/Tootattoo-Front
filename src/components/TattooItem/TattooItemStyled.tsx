@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const TattooItemStyled = styled.li`
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,6 +19,17 @@ const TattooItemStyled = styled.li`
   }
   :hover img {
     transform: scale(1.1);
+  }
+  .tattoo-creator {
+    position: absolute;
+    display: none;
+  }
+  img:hover + .tattoo-creator {
+    display: block;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: white;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
   }
 `;
 
