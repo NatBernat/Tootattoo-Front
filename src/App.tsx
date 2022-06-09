@@ -4,6 +4,7 @@ import AppStyled from "./AppStyled";
 import HeaderMenu from "./components/HeaderMenu/HeaderMenu";
 import Loading from "./components/Loading/Loading";
 import LoggedCheck from "./components/LoggedCheck/LoggedCheck";
+import TattooForm from "./components/TattooForm/TattooForm";
 import UnloggedCheck from "./components/UnloggedCheck/UnloggedCheck";
 import AddedListPage from "./pages/AddedListPage/AddedListPage";
 import FavouritesListPage from "./pages/FavouritesListPage/FavouritesListPage";
@@ -30,6 +31,7 @@ const App = (): JSX.Element => {
     <AppStyled className="App">
       <HeaderMenu />
       <Routes>
+        <Route path="tattoo-form" element={<TattooForm />} />
         <Route path="/" element={<Navigate to="/public-list" />} />
         <Route path="/public-list" element={<PublicListPage />} />
         <Route
