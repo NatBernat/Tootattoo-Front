@@ -1,9 +1,7 @@
 import jwtDecode from "jwt-decode";
-import { useEffect } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import AppStyled from "./AppStyled";
 import HeaderMenu from "./components/HeaderMenu/HeaderMenu";
-import Loading from "./components/Loading/Loading";
 import LoggedCheck from "./components/LoggedCheck/LoggedCheck";
 import UnloggedCheck from "./components/UnloggedCheck/UnloggedCheck";
 import AddedListPage from "./pages/AddedListPage/AddedListPage";
@@ -12,30 +10,19 @@ import LogInFormPage from "./pages/LogInFormPage/LogInFormPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import PublicListPage from "./pages/PublicListPage/PublicListPage";
 import RegisterFormPage from "./pages/RegisterFormPage/RegisterFormPage";
-import {
-  loginActionCreator,
-  logoutActionCreator,
-} from "./redux/features/userSlice/userSlice";
-import { useAppDispatch, useAppSelector } from "./redux/hooks/hooks";
-import { loadTattoosThunk } from "./redux/thunks/tattoosThunks/tattoosThunks";
+import { loginActionCreator } from "./redux/features/userSlice/userSlice";
+import { useAppDispatch } from "./redux/hooks/hooks";
 import { ITokenInfo } from "./types/types";
 
 const App = (): JSX.Element => {
+  const token = localStorage.getItem("token");
   const dispatch = useAppDispatch();
 
-  const logged = useAppSelector((state) => state.user.logged);
-  const token = localStorage.getItem("token");
-  useEffect(() => {
-    if (token) {
-      const userInfo: ITokenInfo = jwtDecode(token);
-      dispatch(loginActionCreator(userInfo));
-    } else {
-      dispatch(logoutActionCreator());
-      dispatch(loadTattoosThunk());
-    }
-  }, [dispatch, logged, token]);
+  try {
+    const userInfo: ITokenInfo = jwtDecode(token as string);
+    dispatch(loginActionCreator(userInfo));
+  } catch (error) {}
 
-  const loading: boolean = useAppSelector((state) => state.ui.loading);
   return (
     <AppStyled className="App">
       <HeaderMenu />
@@ -76,7 +63,6 @@ const App = (): JSX.Element => {
         />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-      {loading && <Loading />}
       <p className="copyrigth">© 2022 Tootattoo.</p>
     </AppStyled>
   );

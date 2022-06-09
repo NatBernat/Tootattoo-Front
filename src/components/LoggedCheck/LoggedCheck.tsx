@@ -12,14 +12,12 @@ const LoggedCheck = ({ children }: ChildrenProp) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!logged) navigate("/login");
+    if (!logged) {
+      navigate("/login");
+    }
   }, [logged, navigate]);
 
-  if (logged) {
-    return children;
-  } else {
-    return null;
-  }
+  return children;
 };
 
 export default LoggedCheck;
