@@ -51,7 +51,7 @@ describe("Given a LoginForm component", () => {
         </BrowserRouter>
       );
 
-      const usernameInput = screen.getByPlaceholderText("username");
+      const usernameInput = screen.getByPlaceholderText("johndoe");
       const usernameinputText = "randomUsername";
       userEvent.type(usernameInput, usernameinputText);
       const passwordInput = screen.getByPlaceholderText("password");

@@ -47,7 +47,7 @@ const LogInForm = (): JSX.Element => {
       <form noValidate autoComplete="off" onSubmit={submitLogin}>
         <label htmlFor="username"> Username </label>
         <input
-          placeholder="username"
+          placeholder="johndoe"
           id="username"
           value={formData.username}
           onChange={changeFormData}
