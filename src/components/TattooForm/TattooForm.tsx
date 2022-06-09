@@ -1,8 +1,8 @@
-import TattooFormStyled from "./TattooFormStyled";
+import LogInFormStyled from "../LogInForm/LogInFormStyled";
 
 const TattooForm = (): JSX.Element => {
   return (
-    <TattooFormStyled>
+    <LogInFormStyled>
       <form noValidate autoComplete="off">
         <label htmlFor="image">Image</label>
         <input
@@ -17,7 +17,7 @@ const TattooForm = (): JSX.Element => {
         <input placeholder="tags" id="tags" />
         <button type="submit">Submit tattoo</button>
       </form>
-    </TattooFormStyled>
+    </LogInFormStyled>
   );
 };
 
