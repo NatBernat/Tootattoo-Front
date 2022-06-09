@@ -40,8 +40,8 @@ const App = (): JSX.Element => {
     <AppStyled className="App">
       <HeaderMenu />
       <Routes>
-        <Route path="/" element={<PublicListPage />} />
-        <Route path="/public-list" element={<Navigate to="/" />} />
+        <Route path="/" element={<Navigate to="/public-list" />} />
+        <Route path="/public-list" element={<PublicListPage />} />
         <Route
           path="/login"
           element={

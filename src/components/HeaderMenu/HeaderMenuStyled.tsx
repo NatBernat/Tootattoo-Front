@@ -118,7 +118,7 @@ const HeaderMenuStyled = styled.header`
     }
   }
 
-  @media (min-width: 620px) {
+  @media (min-width: 650px) {
     li {
       float: left;
     }

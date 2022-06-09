@@ -51,6 +51,11 @@ const HeaderMenu = (): JSX.Element => {
               </Link>
             </li>
             <li>
+              <Link to="/newtattoo" className="header-link" onClick={closeMenu}>
+                <p>Add a tattoo</p>
+              </Link>
+            </li>
+            <li>
               <Link to="/" className="header-link" onClick={logOutUser}>
                 <p>Log out</p>
               </Link>
