@@ -4,7 +4,7 @@ import { useAppDispatch } from "../../redux/hooks/hooks";
 import { AppDispatch } from "../../redux/store/store";
 import { registerUserThunk } from "../../redux/thunks/userThunks/userThunks";
 import { IRegisterInfo } from "../../types/types";
-import LoginFormStyled from "../LogInForm/LogInFormStyled";
+import LogInFormStyled from "../LogInForm/LogInFormStyled";
 
 const RegisterForm = (): JSX.Element => {
   const formInitialState: IRegisterInfo = {
@@ -51,11 +51,11 @@ const RegisterForm = (): JSX.Element => {
     navigate("/login");
   };
   return (
-    <LoginFormStyled>
+    <LogInFormStyled>
       <form noValidate autoComplete="off" onSubmit={submitRegister}>
         <label htmlFor="username"> Username </label>
         <input
-          placeholder="username"
+          placeholder="johndoe"
           id="username"
           value={formData.username}
           onChange={changeFormData}
@@ -70,14 +70,14 @@ const RegisterForm = (): JSX.Element => {
         />
         <label htmlFor="fullname"> Full name </label>
         <input
-          placeholder="full name"
+          placeholder="John Doe"
           id="fullname"
           value={formData.fullname}
           onChange={changeFormData}
         />
         <label htmlFor="email"> E-mail </label>
         <input
-          placeholder="e-mail"
+          placeholder="johndoe@tootattoo.com"
           id="email"
           value={formData.email}
           onChange={changeFormData}
@@ -92,7 +92,7 @@ const RegisterForm = (): JSX.Element => {
         <br />
         <span className="redirect-link__keyword">Log in</span>
       </Link>
-    </LoginFormStyled>
+    </LogInFormStyled>
   );
 };
 

@@ -50,16 +50,16 @@ describe("Given a RegisterForm component", () => {
         </BrowserRouter>
       );
 
-      const usernameInput = screen.getByPlaceholderText("username");
+      const usernameInput = screen.getByPlaceholderText("johndoe");
       const usernameinputText = "randomUsername";
       userEvent.type(usernameInput, usernameinputText);
       const passwordInput = screen.getByPlaceholderText("password");
       const passwordInputText = "randomPassword";
       userEvent.type(passwordInput, passwordInputText);
-      const fullnameInput = screen.getByPlaceholderText("full name");
+      const fullnameInput = screen.getByPlaceholderText("John Doe");
       const fullnameinputText = "randomUsername";
       userEvent.type(fullnameInput, fullnameinputText);
-      const emailInput = screen.getByPlaceholderText("e-mail");
+      const emailInput = screen.getByPlaceholderText("johndoe@tootattoo.com");
       const emailInputText = "randomPassword";
       userEvent.type(emailInput, emailInputText);
       const registerButton = screen.getByRole("button", { name: "Register" });
