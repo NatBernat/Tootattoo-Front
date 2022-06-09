@@ -12,4 +12,8 @@ body {
   --toastify-font-family: "inherit";
   --toastify-text-color-light: #121212;
   --toastify-color-light: #fde5e2;
+  --toastify-icon-color-info: black;
+  --toastify-icon-color-success: black;
+  --toastify-icon-color-warning: black;
+  --toastify-icon-color-error: black;
 }
