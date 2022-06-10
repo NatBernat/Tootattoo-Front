@@ -20,16 +20,20 @@ const TattooForm = (): JSX.Element => {
 
   const [formData, setFormData] = useState<ITattooCreate>(formInitialState);
 
-  const changeFormData = (event: ChangeEvent<HTMLInputElement>) => {
-    setFormData({ ...formData, [event.target.id]: event.target.value });
+  const changeFormData = (event: ChangeEvent<HTMLInputElement>): void => {
+    setFormData({
+      ...formData,
+      [event.target.id]:
+        event.target.type === "file"
+          ? event.target.files![0] || ""
+          : event.target.value,
+    });
   };
 
   const [buttonDisable, setButtonDisable] = useState(true);
   useEffect(() => {
-    if (formData.image !== "" && formData.title !== "") {
+    if (formData.title !== "") {
       setButtonDisable(false);
-    } else {
-      setButtonDisable(true);
     }
   }, [formData]);
 
@@ -40,7 +44,11 @@ const TattooForm = (): JSX.Element => {
   const dispatch: AppDispatch = useAppDispatch();
   const submitTattoo = (event: React.SyntheticEvent) => {
     event.preventDefault();
-    const dispatchedData = { ...formData };
+    const dispatchedData: FormData | any = new FormData();
+    dispatchedData.append("image", formData.image);
+    dispatchedData.append("title", formData.title);
+    dispatchedData.append("creator", formData.creator);
+    dispatchedData.append("creationDate", formData.creationDate);
 
     resetForm();
 
@@ -52,9 +60,9 @@ const TattooForm = (): JSX.Element => {
       <form noValidate autoComplete="off" onSubmit={submitTattoo}>
         <label htmlFor="image">Image</label>
         <input
-          placeholder="tattoo image url"
           id="image"
-          value={formData.image}
+          type="file"
+          accept=".jpg,.jpeg,.png"
           onChange={changeFormData}
         />
         <label htmlFor="title">Title</label>

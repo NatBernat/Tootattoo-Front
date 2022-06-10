@@ -9,7 +9,12 @@ const TattooItem = ({
   return (
     <>
       <TattooItemStyled>
-        <img className="tattoo" src={image} alt={title} title={title} />
+        <img
+          className="tattoo"
+          src={`${process.env.REACT_APP_API_URL}uploads/images/${image}`}
+          alt={title}
+          title={title}
+        />
         <p className="tattoo-creator">@{creator}</p>
       </TattooItemStyled>
     </>

@@ -16,7 +16,12 @@ const TattooAddedItem = ({
   return (
     <>
       <TattooAddedItemStyled>
-        <img className="tattoo" src={image} alt={title} title={title} />
+        <img
+          className="tattoo"
+          src={`${process.env.REACT_APP_API_URL}uploads/images/${image}`}
+          alt={title}
+          title={title}
+        />
         <button className="delete-button" onClick={deleteTattoo}>
           DELETE
         </button>

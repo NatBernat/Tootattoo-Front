@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { ITattoo } from "../../../types/types";
+import { ITattoo, ITattooCreate } from "../../../types/types";
 
 const initialState: ITattoo[] = [];
 
@@ -13,7 +13,7 @@ const tattoosSlice = createSlice({
     ],
     deleteTattoo: (tattoos: ITattoo[], action) =>
       tattoos.filter((tattoo) => tattoo._id !== action.payload),
-    createTattoo: (tattoo, action) => ({
+    createTattoo: (tattoo, action: PayloadAction<FormData>) => ({
       ...tattoo,
     }),
   },
