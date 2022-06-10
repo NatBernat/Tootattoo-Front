@@ -10,7 +10,6 @@ import {
 } from "../../features/uiSlice/uiSlice";
 import { toast } from "react-toastify";
 import { AppDispatch } from "../../store/store";
-import { ITattooCreate } from "../../../types/types";
 
 const getAuthHeader = () => {
   const token = localStorage.getItem("token");
@@ -54,7 +53,7 @@ export const deleteTattooThunk =
   };
 
 export const createTattooThunk =
-  (newTattoo: ITattooCreate) => async (dispatch: AppDispatch) => {
+  (newTattoo: FormData) => async (dispatch: AppDispatch) => {
     const createTattooToast = toast.loading("Adding tattoo...", {
       isLoading: true,
     });
