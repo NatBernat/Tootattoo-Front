@@ -13,6 +13,9 @@ const tattoosSlice = createSlice({
     ],
     deleteTattoo: (tattoos: ITattoo[], action) =>
       tattoos.filter((tattoo) => tattoo._id !== action.payload),
+    createTattoo: (tattoo, action) => ({
+      ...tattoo,
+    }),
   },
 });
 
@@ -21,4 +24,5 @@ export default tattoosSlice.reducer;
 export const {
   loadTattoos: loadTattoosActionCreator,
   deleteTattoo: deleteTattooActionCreator,
+  createTattoo: createTattooActionCreator,
 } = tattoosSlice.actions;

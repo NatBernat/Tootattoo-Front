@@ -6,18 +6,15 @@ const AppStyled = styled.div`
   }
 
   .greeting {
-    display: flex;
-    width: 100vw;
-    justify-content: center;
+    text-align: center;
     margin: 70px 0 0 0;
     padding: 0;
   }
 
   .page-title {
-    display: flex;
-    width: 90vw;
-    justify-content: center;
+    text-align: center;
     margin: 70px 0 10px 0;
+    padding: 0;
     font-size: 1.5em;
     font-weight: normal;
   }
@@ -25,12 +22,6 @@ const AppStyled = styled.div`
   .not-found-page {
     margin: 25vh auto;
     padding: 10vh 10vw;
-  }
-
-  .copyrigth {
-    margin: 30px 0 10px 0;
-    font-size: 0.8em;
-    text-align: center;
   }
 `;
 

@@ -50,7 +50,7 @@ const App = (): JSX.Element => {
           }
         />
         <Route
-          path="/mytattoos"
+          path="/my-tattoos"
           element={
             <LoggedCheck>
               <AddedListPage />
@@ -58,7 +58,7 @@ const App = (): JSX.Element => {
           }
         />
         <Route
-          path="/myfavourites"
+          path="/my-favourites"
           element={
             <LoggedCheck>
               <FavouritesListPage />
@@ -66,7 +66,7 @@ const App = (): JSX.Element => {
           }
         />
         <Route
-          path="tattooform"
+          path="tattoo-form"
           element={
             <LoggedCheck>
               <TattooFormPage />
@@ -76,7 +76,6 @@ const App = (): JSX.Element => {
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       {loading && <Loading />}
-      <p className="copyrigth">© 2022 Tootattoo.</p>
     </AppStyled>
   );
 };

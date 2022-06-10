@@ -38,7 +38,7 @@ const HeaderMenu = (): JSX.Element => {
           <>
             <li>
               <Link
-                to="/myfavourites"
+                to="/my-favourites"
                 className="header-link"
                 onClick={closeMenu}
               >
@@ -46,12 +46,20 @@ const HeaderMenu = (): JSX.Element => {
               </Link>
             </li>
             <li>
-              <Link to="/mytattoos" className="header-link" onClick={closeMenu}>
+              <Link
+                to="/my-tattoos"
+                className="header-link"
+                onClick={closeMenu}
+              >
                 <p>My tattoos</p>
               </Link>
             </li>
             <li>
-              <Link to="/newtattoo" className="header-link" onClick={closeMenu}>
+              <Link
+                to="/tattoo-form"
+                className="header-link"
+                onClick={closeMenu}
+              >
                 <p>Add a tattoo</p>
               </Link>
             </li>
