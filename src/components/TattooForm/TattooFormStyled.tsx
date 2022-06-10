@@ -33,9 +33,6 @@ const TattooFormStyled = styled.div`
     text-align: center;
     font-size: 0.8em;
   }
-  #image-input {
-    text-align: center;
-  }
 
   button {
     border-width: 0;

@@ -27,6 +27,13 @@ export interface ITattoo {
   tags: string[];
 }
 
+export interface ITattooCreate {
+  title: string;
+  image: string;
+  creator: string;
+  creationDate: string;
+}
+
 export interface ITokenInfo {
   username: string;
 }

@@ -14,12 +14,14 @@ const FavouritesListPage = (): JSX.Element => {
   }, [dispatch]);
 
   return (
-    <FavouritesListPageStyled className="page">
+    <>
       <h2 className="page-title">My favourite tattoos</h2>
-      {tattoos.map((tattoo) => {
-        return <TattooItem key={tattoo._id} tattoo={tattoo} />;
-      })}
-    </FavouritesListPageStyled>
+      <FavouritesListPageStyled className="page">
+        {tattoos.map((tattoo) => {
+          return <TattooItem key={tattoo._id} tattoo={tattoo} />;
+        })}
+      </FavouritesListPageStyled>
+    </>
   );
 };
 

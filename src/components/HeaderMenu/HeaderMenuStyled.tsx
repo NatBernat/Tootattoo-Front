@@ -23,7 +23,7 @@ const HeaderMenuStyled = styled.header`
 
   p {
     color: #000;
-    font-size: 1.4em;
+    font-size: 1.3em;
     cursor: pointer;
   }
 
@@ -98,7 +98,7 @@ const HeaderMenuStyled = styled.header`
   .menu-btn {
     display: none;
     :checked ~ .menu {
-      max-height: 240px;
+      max-height: 100vh;
     }
     :checked ~ .menu-icon .navicon {
       background: transparent;
@@ -118,7 +118,7 @@ const HeaderMenuStyled = styled.header`
     }
   }
 
-  @media (min-width: 650px) {
+  @media (min-width: 670px) {
     li {
       float: left;
     }

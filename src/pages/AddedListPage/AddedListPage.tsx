@@ -14,12 +14,14 @@ const AddedListPage = (): JSX.Element => {
   }, [dispatch]);
 
   return (
-    <AddedListPageStyled className="page">
+    <>
       <h2 className="page-title">My tattoos</h2>
-      {tattoos.map((tattoo) => {
-        return <TattooAddedItem key={tattoo._id} tattoo={tattoo} />;
-      })}
-    </AddedListPageStyled>
+      <AddedListPageStyled className="page">
+        {tattoos.map((tattoo) => {
+          return <TattooAddedItem key={tattoo._id} tattoo={tattoo} />;
+        })}
+      </AddedListPageStyled>
+    </>
   );
 };
 

@@ -1,5 +1,6 @@
 import axios from "axios";
 import {
+  createTattooActionCreator,
   deleteTattooActionCreator,
   loadTattoosActionCreator,
 } from "../../features/tattoosSlice/tattoosSlice";
@@ -9,6 +10,7 @@ import {
 } from "../../features/uiSlice/uiSlice";
 import { toast } from "react-toastify";
 import { AppDispatch } from "../../store/store";
+import { ITattooCreate } from "../../../types/types";
 
 const getAuthHeader = () => {
   const token = localStorage.getItem("token");
@@ -48,5 +50,33 @@ export const deleteTattooThunk =
         autoClose: 100,
       });
       toast.error("Tattoo couldn't be removed, try again later");
+    }
+  };
+
+export const createTattooThunk =
+  (newTattoo: ITattooCreate) => async (dispatch: AppDispatch) => {
+    const createTattooToast = toast.loading("Adding tattoo...", {
+      isLoading: true,
+    });
+    try {
+      await axios.post(
+        `${process.env.REACT_APP_API_URL}tattoos/newTattoo`,
+        newTattoo,
+        getAuthHeader()
+      );
+
+      toast.update(createTattooToast, {
+        isLoading: false,
+        autoClose: 100,
+      });
+      toast.success("Tattoo added!");
+
+      dispatch(createTattooActionCreator(newTattoo));
+    } catch (error: any) {
+      toast.update(createTattooToast, {
+        isLoading: false,
+        autoClose: 100,
+      });
+      toast.error("Tattoo could not be created");
     }
   };
