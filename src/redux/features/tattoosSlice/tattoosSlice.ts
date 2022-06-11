@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { ITattoo, ITattooCreate } from "../../../types/types";
+import { ITattoo } from "../../../types/types";
 
 const initialState: ITattoo[] = [];
 
@@ -16,6 +16,10 @@ const tattoosSlice = createSlice({
     createTattoo: (tattoo, action: PayloadAction<FormData>) => ({
       ...tattoo,
     }),
+    loadTattoosByUser: (
+      tattoos: ITattoo[],
+      action: PayloadAction<ITattoo[]>
+    ) => [...action.payload],
   },
 });
 
@@ -25,4 +29,5 @@ export const {
   loadTattoos: loadTattoosActionCreator,
   deleteTattoo: deleteTattooActionCreator,
   createTattoo: createTattooActionCreator,
+  loadTattoosByUser: loadTattoosByUserActionCreator,
 } = tattoosSlice.actions;

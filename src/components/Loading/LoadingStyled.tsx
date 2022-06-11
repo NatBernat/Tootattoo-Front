@@ -4,7 +4,7 @@ const LoadingStyled = styled.div`
   display: flex;
   justify-content: center;
   align-content: center;
-  margin-top: 35vh;
+  margin-top: 25vh;
 
   img {
     width: 150px;
