@@ -3,6 +3,7 @@ import {
   createTattooActionCreator,
   deleteTattooActionCreator,
   loadTattoosActionCreator,
+  loadTattoosByUserActionCreator,
 } from "../../features/tattoosSlice/tattoosSlice";
 import {
   finishedLoadingActionCreator,
@@ -79,3 +80,17 @@ export const createTattooThunk =
       toast.error("Tattoo could not be created");
     }
   };
+
+export const loadTattoosByUserThunk = () => async (dispatch: AppDispatch) => {
+  try {
+    dispatch(loadingActionCreator());
+    const route = `${process.env.REACT_APP_API_URL}tattoos/list/user`;
+    const {
+      data: { tattoosByUser },
+    } = await axios.get(route, getAuthHeader());
+    dispatch(loadTattoosByUserActionCreator(tattoosByUser));
+    dispatch(finishedLoadingActionCreator());
+  } catch (error: any) {
+    dispatch(finishedLoadingActionCreator());
+  }
+};

@@ -58,7 +58,7 @@ const TattooForm = (): JSX.Element => {
   return (
     <LogInFormStyled>
       <form noValidate autoComplete="off" onSubmit={submitTattoo}>
-        <label htmlFor="image">Image</label>
+        <label htmlFor="image">Image (max. 5mb)</label>
         <input
           id="image"
           type="file"

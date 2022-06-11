@@ -1,4 +1,5 @@
 import jwtDecode from "jwt-decode";
+import { useEffect } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import AppStyled from "./AppStyled";
 import HeaderMenu from "./components/HeaderMenu/HeaderMenu";
@@ -20,10 +21,12 @@ const App = (): JSX.Element => {
   const token = localStorage.getItem("token");
   const dispatch = useAppDispatch();
 
-  try {
-    const userInfo: ITokenInfo = jwtDecode(token as string);
-    dispatch(loginActionCreator(userInfo));
-  } catch (error) {}
+  useEffect(() => {
+    try {
+      const userInfo: ITokenInfo = jwtDecode(token as string);
+      dispatch(loginActionCreator(userInfo));
+    } catch (error) {}
+  });
 
   const loading: boolean = useAppSelector((state) => state.ui.loading);
 
