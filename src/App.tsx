@@ -12,10 +12,12 @@ import LogInFormPage from "./pages/LogInFormPage/LogInFormPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import PublicListPage from "./pages/PublicListPage/PublicListPage";
 import RegisterFormPage from "./pages/RegisterFormPage/RegisterFormPage";
-import TattooFormPage from "./pages/TattooFormPage/TattooFormPage";
+import AddTattooFormPage from "./pages/AddTattooFormPage/AddTattooFormPage";
 import { loginActionCreator } from "./redux/features/userSlice/userSlice";
 import { useAppDispatch, useAppSelector } from "./redux/hooks/hooks";
 import { ITokenInfo } from "./types/types";
+import EditTattooFormPage from "./pages/EditTattooFormPage/EditTattooFormPage";
+import DetailPage from "./pages/DetailPage/DetailPage";
 
 const App = (): JSX.Element => {
   const token = localStorage.getItem("token");
@@ -52,6 +54,7 @@ const App = (): JSX.Element => {
             </UnloggedCheck>
           }
         />
+        <Route path="/:id" element={<DetailPage />} />
         <Route
           path="/my-tattoos"
           element={
@@ -69,10 +72,18 @@ const App = (): JSX.Element => {
           }
         />
         <Route
-          path="tattoo-form"
+          path="/tattoo-form"
           element={
             <LoggedCheck>
-              <TattooFormPage />
+              <AddTattooFormPage />
+            </LoggedCheck>
+          }
+        />
+        <Route
+          path="/edit-tattoo/:id"
+          element={
+            <LoggedCheck>
+              <EditTattooFormPage />
             </LoggedCheck>
           }
         />
