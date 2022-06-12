@@ -11,6 +11,7 @@ import {
 } from "../../features/uiSlice/uiSlice";
 import { toast } from "react-toastify";
 import { AppDispatch } from "../../store/store";
+import { loadTattooByIdActionCreator } from "../../features/tattooSlice/tattooSlice";
 
 const getAuthHeader = () => {
   const token = localStorage.getItem("token");
@@ -30,6 +31,19 @@ export const loadTattoosThunk = () => async (dispatch: AppDispatch) => {
     dispatch(finishedLoadingActionCreator());
   }
 };
+
+export const getTattooByIdThunk =
+  (id: string) => async (dispatch: AppDispatch) => {
+    try {
+      const route = `${process.env.REACT_APP_API_URL}tattoos/${id}`;
+      const {
+        data: { tattooById },
+      } = await axios.get(route);
+      dispatch(loadTattooByIdActionCreator(tattooById));
+    } catch (error: any) {
+      toast.error("Tattoo couldn't be found");
+    }
+  };
 
 export const deleteTattooThunk =
   (id: string) => async (dispatch: AppDispatch) => {

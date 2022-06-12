@@ -8,10 +8,7 @@ import {
   ILoginResponse,
   IUserInfo,
 } from "../../../types/types";
-import {
-  loginActionCreator,
-  logoutActionCreator,
-} from "../../features/userSlice/userSlice";
+import { loginActionCreator } from "../../features/userSlice/userSlice";
 import { AppDispatch } from "../../store/store";
 
 export const loginUserThunk =
@@ -66,9 +63,3 @@ export const registerUserThunk =
       toast.error("User could not be registered");
     }
   };
-
-export const logOutUserThunk = () => (dispatch: AppDispatch) => {
-  localStorage.removeItem("token");
-  toast.success("Logged out");
-  dispatch(logoutActionCreator());
-};

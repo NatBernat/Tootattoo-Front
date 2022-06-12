@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-
+import { toast } from "react-toastify";
+import { logoutActionCreator } from "../../redux/features/userSlice/userSlice";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks/hooks";
-import { logOutUserThunk } from "../../redux/thunks/userThunks/userThunks";
 import HeaderMenuStyled from "./HeaderMenuStyled";
 
 const HeaderMenu = (): JSX.Element => {
@@ -19,7 +19,9 @@ const HeaderMenu = (): JSX.Element => {
   const dispatch = useAppDispatch();
   const logOutUser = () => {
     closeMenu();
-    dispatch(logOutUserThunk());
+    localStorage.removeItem("token");
+    toast.success("Logged out");
+    dispatch(logoutActionCreator());
   };
 
   return (
