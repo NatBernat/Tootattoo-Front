@@ -1,27 +1,28 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import DetailTattoo from "../../components/DetailTattoo/DetailTattoo";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks/hooks";
 import { getTattooByIdThunk } from "../../redux/thunks/tattoosThunks/tattoosThunks";
+import DetailPageStyled from "./DetailPageStyled";
 
 const DetailPage = (): JSX.Element => {
   const { id } = useParams();
   const dispatch = useAppDispatch();
-  const tattooById = useAppSelector((state) => state.tattoo);
 
   useEffect(() => {
     dispatch(getTattooByIdThunk(id as string));
-    console.log(tattooById);
-  }, [dispatch, id, tattooById]);
+  }, [dispatch, id]);
+
+  const tattooById = useAppSelector((state) => state.tattoo);
 
   return (
     <div>
       {tattooById.title !== "" && (
         <>
-          <img src={tattooById.image} alt={tattooById.title} />
-          <p>Title: {tattooById.title}</p>
-          <p>Tags : {tattooById.tags}</p>
-          <p>Creator: {tattooById.creator}</p>
-          <p>Creation date: {tattooById.creationDate}</p>
+          <h2 className="page-title">{tattooById.title}</h2>
+          <DetailPageStyled>
+            <DetailTattoo tattoo={tattooById} />
+          </DetailPageStyled>
         </>
       )}
     </div>
