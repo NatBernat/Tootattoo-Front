@@ -3,7 +3,6 @@ import styled from "styled-components";
 const DetailTattooStyled = styled.section`
   display: flex;
   flex-direction: column;
-  gap: 20px;
   margin: 10px;
   img {
     object-fit: cover;
@@ -13,12 +12,17 @@ const DetailTattooStyled = styled.section`
     height: 90vw;
   }
   .details-list {
+    background-color: #fabfb7;
     list-style: none;
     padding: 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    padding: 20px;
+  }
+  .details-list__property {
+    font-weight: bold;
   }
 `;
 

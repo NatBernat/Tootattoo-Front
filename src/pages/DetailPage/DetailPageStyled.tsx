@@ -6,13 +6,10 @@ const DetailPageStyled = styled.div`
   align-items: center;
   justify-content: center;
   align-items: center;
-  background-color: #fabfb7;
-  gap: 20px;
-  padding: 20px;
   margin: auto;
   max-width: 900px;
   width: fit-content;
-  font-size: 1.4em;
+  font-size: 1.2em;
 `;
 
 export default DetailPageStyled;

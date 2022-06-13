@@ -17,12 +17,6 @@ const tattoosSlice = createSlice({
     ) => [...action.payload],
     deleteTattoo: (tattoos: ITattoo[], action) =>
       tattoos.filter((tattoo) => tattoo._id !== action.payload),
-    createTattoo: (tattoo, action: PayloadAction<FormData>) => ({
-      ...tattoo,
-    }),
-    updateTattoo: (tattoo, action: PayloadAction<FormData>) => ({
-      ...tattoo,
-    }),
   },
 });
 
@@ -32,6 +26,4 @@ export const {
   loadTattoos: loadTattoosActionCreator,
   loadTattoosByUser: loadTattoosByUserActionCreator,
   deleteTattoo: deleteTattooActionCreator,
-  createTattoo: createTattooActionCreator,
-  updateTattoo: updateTattooActionCreator,
 } = tattoosSlice.actions;
