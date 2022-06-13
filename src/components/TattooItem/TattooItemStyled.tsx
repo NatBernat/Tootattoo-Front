@@ -22,14 +22,22 @@ const TattooItemStyled = styled.li`
   }
   .tattoo-creator {
     position: absolute;
-    display: none;
-  }
-  img:hover + .tattoo-creator {
-    display: block;
-    font-weight: bold;
-    font-size: 1.2em;
+    bottom: 0;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
     color: white;
-    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    left: 0;
+    right: 0;
+    font-family: inherit;
+    font-size: 1.1em;
+    :hover {
+      cursor: none;
+      background-color: #fabfb77f;
+      color: black;
+      font-weight: bold;
+    }
   }
 `;
 

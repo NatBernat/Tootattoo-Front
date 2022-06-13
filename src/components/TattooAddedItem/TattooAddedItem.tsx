@@ -17,6 +17,10 @@ const TattooAddedItem = ({
 
   const navigate = useNavigate();
 
+  const navigateToDetail = () => {
+    navigate(`/${_id}`);
+  };
+
   const editTattoo = () => {
     navigate(`/edit-tattoo/${_id}`);
   };
@@ -29,6 +33,7 @@ const TattooAddedItem = ({
           src={`${process.env.REACT_APP_API_URL}uploads/images/${image}`}
           alt={title}
           title={title}
+          onClick={navigateToDetail}
         />
         <button className="delete-button" onClick={deleteTattoo}>
           DELETE

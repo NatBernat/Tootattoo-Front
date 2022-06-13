@@ -30,8 +30,11 @@ const TattooAddedItemStyled = styled.li`
     left: 0;
     right: 0;
     font-family: inherit;
+    font-size: 1.1em;
     :hover {
-      font-weight: bolder;
+      background-color: #fabfb77f;
+      color: black;
+      font-weight: bold;
     }
   }
 

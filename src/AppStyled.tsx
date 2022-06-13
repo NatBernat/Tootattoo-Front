@@ -13,7 +13,7 @@ const AppStyled = styled.div`
 
   .page-title {
     text-align: center;
-    margin: 70px 0 10px 0;
+    margin: 80px 0 10px 0;
     padding: 0;
     font-size: 1.5em;
     font-weight: normal;
