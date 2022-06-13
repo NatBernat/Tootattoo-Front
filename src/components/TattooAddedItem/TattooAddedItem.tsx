@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../redux/hooks/hooks";
 import { deleteTattooThunk } from "../../redux/thunks/tattoosThunks/tattoosThunks";
 import { ITattoo } from "../../types/types";
@@ -9,8 +10,15 @@ const TattooAddedItem = ({
   tattoo: ITattoo;
 }): JSX.Element => {
   const dispatch = useAppDispatch();
+
   const deleteTattoo = () => {
     dispatch(deleteTattooThunk(_id));
+  };
+
+  const navigate = useNavigate();
+
+  const editTattoo = () => {
+    navigate(`/edit-tattoo/${_id}`);
   };
 
   return (
@@ -25,7 +33,9 @@ const TattooAddedItem = ({
         <button className="delete-button" onClick={deleteTattoo}>
           DELETE
         </button>
-        <button className="edit-button">EDIT</button>
+        <button className="edit-button" onClick={editTattoo}>
+          EDIT
+        </button>
       </TattooAddedItemStyled>
     </>
   );
