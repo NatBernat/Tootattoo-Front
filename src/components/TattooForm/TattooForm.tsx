@@ -74,7 +74,6 @@ const TattooForm = ({ tattoo }: tattooProp): JSX.Element => {
     dispatchedData.append("title", formData.title);
     dispatchedData.append("creator", formData.creator);
     dispatchedData.append("creationDate", formData.creationDate);
-    console.log(dispatchedData);
     resetForm();
 
     dispatch(createTattooThunk(dispatchedData));
