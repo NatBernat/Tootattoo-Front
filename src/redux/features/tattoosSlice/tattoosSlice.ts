@@ -11,15 +11,18 @@ const tattoosSlice = createSlice({
     loadTattoos: (tattoos: ITattoo[], action: PayloadAction<ITattoo[]>) => [
       ...action.payload,
     ],
+    loadTattoosByUser: (
+      tattoos: ITattoo[],
+      action: PayloadAction<ITattoo[]>
+    ) => [...action.payload],
     deleteTattoo: (tattoos: ITattoo[], action) =>
       tattoos.filter((tattoo) => tattoo._id !== action.payload),
     createTattoo: (tattoo, action: PayloadAction<FormData>) => ({
       ...tattoo,
     }),
-    loadTattoosByUser: (
-      tattoos: ITattoo[],
-      action: PayloadAction<ITattoo[]>
-    ) => [...action.payload],
+    updateTattoo: (tattoo, action: PayloadAction<FormData>) => ({
+      ...tattoo,
+    }),
   },
 });
 
@@ -27,7 +30,8 @@ export default tattoosSlice.reducer;
 
 export const {
   loadTattoos: loadTattoosActionCreator,
+  loadTattoosByUser: loadTattoosByUserActionCreator,
   deleteTattoo: deleteTattooActionCreator,
   createTattoo: createTattooActionCreator,
-  loadTattoosByUser: loadTattoosByUserActionCreator,
+  updateTattoo: updateTattooActionCreator,
 } = tattoosSlice.actions;

@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import store from "../../redux/store/store";
-import TattooFormPage from "./TattooFormPage";
+import EditTattooFormPage from "./EditTattooFormPage";
 
 describe("Given TattooFormPage component", () => {
   describe("When it's instantiated", () => {
@@ -10,7 +10,7 @@ describe("Given TattooFormPage component", () => {
       render(
         <BrowserRouter>
           <Provider store={store}>
-            <TattooFormPage />
+            <EditTattooFormPage />
           </Provider>
         </BrowserRouter>
       );

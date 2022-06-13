@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { ITattoo } from "../../types/types";
 import TattooItemStyled from "./TattooItemStyled";
 
@@ -6,12 +7,16 @@ const TattooItem = ({
 }: {
   tattoo: ITattoo;
 }): JSX.Element => {
+  const navigate = useNavigate();
+  const detailPage = () => {
+    navigate(`/${_id}`);
+  };
   return (
     <>
-      <TattooItemStyled>
+      <TattooItemStyled onClick={detailPage}>
         <img
           className="tattoo"
-          src={`${process.env.REACT_APP_API_URL}uploads/images/${image}`}
+          src={`${process.env.REACT_APP_IMAGE_URL}${image}`}
           alt={title}
           title={title}
         />

@@ -4,6 +4,7 @@ import {
   deleteTattooActionCreator,
   loadTattoosActionCreator,
   loadTattoosByUserActionCreator,
+  updateTattooActionCreator,
 } from "../../features/tattoosSlice/tattoosSlice";
 import {
   finishedLoadingActionCreator,
@@ -26,6 +27,20 @@ export const loadTattoosThunk = () => async (dispatch: AppDispatch) => {
       data: { tattoos },
     } = await axios.get(route);
     dispatch(loadTattoosActionCreator(tattoos));
+    dispatch(finishedLoadingActionCreator());
+  } catch (error: any) {
+    dispatch(finishedLoadingActionCreator());
+  }
+};
+
+export const loadTattoosByUserThunk = () => async (dispatch: AppDispatch) => {
+  try {
+    dispatch(loadingActionCreator());
+    const route = `${process.env.REACT_APP_API_URL}tattoos/list/user`;
+    const {
+      data: { tattoosByUser },
+    } = await axios.get(route, getAuthHeader());
+    dispatch(loadTattoosByUserActionCreator(tattoosByUser));
     dispatch(finishedLoadingActionCreator());
   } catch (error: any) {
     dispatch(finishedLoadingActionCreator());
@@ -95,16 +110,25 @@ export const createTattooThunk =
     }
   };
 
-export const loadTattoosByUserThunk = () => async (dispatch: AppDispatch) => {
-  try {
-    dispatch(loadingActionCreator());
-    const route = `${process.env.REACT_APP_API_URL}tattoos/list/user`;
-    const {
-      data: { tattoosByUser },
-    } = await axios.get(route, getAuthHeader());
-    dispatch(loadTattoosByUserActionCreator(tattoosByUser));
-    dispatch(finishedLoadingActionCreator());
-  } catch (error: any) {
-    dispatch(finishedLoadingActionCreator());
-  }
-};
+export const updateTattooThunk =
+  (formData: FormData, id: string) => async (dispatch: AppDispatch) => {
+    const updateTattooToast = toast.loading("Updating tattoo...", {
+      isLoading: true,
+    });
+    try {
+      const route = `${process.env.REACT_APP_API_URL}tattoos/${id}`;
+      await axios.put(route, formData, getAuthHeader());
+      dispatch(updateTattooActionCreator(formData));
+      toast.update(updateTattooToast, {
+        isLoading: false,
+        autoClose: 100,
+      });
+      toast.success("Tattoo updated!");
+    } catch (error) {
+      toast.update(updateTattooToast, {
+        isLoading: false,
+        autoClose: 100,
+      });
+      toast.error("Tattoo could not be updated");
+    }
+  };
