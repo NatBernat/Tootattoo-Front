@@ -13,7 +13,6 @@ import {
 import { toast } from "react-toastify";
 import { AppDispatch } from "../../store/store";
 import { loadTattooByIdActionCreator } from "../../features/tattooSlice/tattooSlice";
-import { ITattoo } from "../../../types/types";
 
 const getAuthHeader = () => {
   const token = localStorage.getItem("token");
