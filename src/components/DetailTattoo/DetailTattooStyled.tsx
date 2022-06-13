@@ -20,6 +20,7 @@ const DetailTattooStyled = styled.section`
     align-items: center;
     gap: 10px;
     padding: 20px;
+    margin-bottom: 20px;
   }
   .details-list__property {
     font-weight: bold;
