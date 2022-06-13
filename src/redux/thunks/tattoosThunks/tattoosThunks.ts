@@ -117,6 +117,7 @@ export const updateTattooThunk =
       const route = `${process.env.REACT_APP_API_URL}tattoos/${id}`;
       await axios.put(route, formData, getAuthHeader());
       dispatch(loadTattoosByUserThunk());
+
       toast.update(updateTattooToast, {
         isLoading: false,
         autoClose: 100,
