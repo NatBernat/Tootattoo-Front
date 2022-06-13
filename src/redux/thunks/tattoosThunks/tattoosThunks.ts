@@ -1,10 +1,8 @@
 import axios from "axios";
 import {
-  createTattooActionCreator,
   deleteTattooActionCreator,
   loadTattoosActionCreator,
   loadTattoosByUserActionCreator,
-  updateTattooActionCreator,
 } from "../../features/tattoosSlice/tattoosSlice";
 import {
   finishedLoadingActionCreator,
@@ -100,7 +98,7 @@ export const createTattooThunk =
       });
       toast.success("Tattoo added!");
 
-      dispatch(createTattooActionCreator(newTattoo));
+      dispatch(loadTattoosByUserThunk());
     } catch (error: any) {
       toast.update(createTattooToast, {
         isLoading: false,
@@ -118,7 +116,7 @@ export const updateTattooThunk =
     try {
       const route = `${process.env.REACT_APP_API_URL}tattoos/${id}`;
       await axios.put(route, formData, getAuthHeader());
-      dispatch(updateTattooActionCreator(formData));
+      dispatch(loadTattoosByUserThunk());
       toast.update(updateTattooToast, {
         isLoading: false,
         autoClose: 100,

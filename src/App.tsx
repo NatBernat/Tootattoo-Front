@@ -16,8 +16,9 @@ import AddTattooFormPage from "./pages/AddTattooFormPage/AddTattooFormPage";
 import { loginActionCreator } from "./redux/features/userSlice/userSlice";
 import { useAppDispatch, useAppSelector } from "./redux/hooks/hooks";
 import { ITokenInfo } from "./types/types";
-import EditTattooFormPage from "./pages/EditTattooFormPage/EditTattooFormPage";
+
 import DetailPage from "./pages/DetailPage/DetailPage";
+import EditTattooFormPage from "./pages/EditTattooFormPage/EditTattooFormPage";
 
 const App = (): JSX.Element => {
   const token = localStorage.getItem("token");
