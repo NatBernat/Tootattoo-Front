@@ -11,6 +11,10 @@ const store = configureStore({
     tattoos: tattoosReducer,
     tattoo: tattooReducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
 });
 
 export type RootState = ReturnType<typeof store.getState>;
