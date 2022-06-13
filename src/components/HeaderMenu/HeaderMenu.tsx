@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { logoutActionCreator } from "../../redux/features/userSlice/userSlice";
+
 import { useAppDispatch, useAppSelector } from "../../redux/hooks/hooks";
 import HeaderMenuStyled from "./HeaderMenuStyled";
 
@@ -66,8 +67,8 @@ const HeaderMenu = (): JSX.Element => {
               </Link>
             </li>
             <li>
-              <Link to="/" className="header-link" onClick={logOutUser}>
-                <p>Log out</p>
+              <Link to="/" className="header-link header-link__log-button">
+                <p onClick={logOutUser}>Log out</p>
               </Link>
             </li>
           </>
