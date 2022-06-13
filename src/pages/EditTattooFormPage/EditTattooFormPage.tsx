@@ -16,7 +16,7 @@ const EditTattooFormPage = (): JSX.Element => {
 
   return (
     <AddTattooFormPageStyled className="page">
-      <h2 className="page-title">Add a tattoo:</h2>
+      <h2 className="page-title">Edit tattoo:</h2>
       <TattooForm tattoo={tattoo} />
     </AddTattooFormPageStyled>
   );

@@ -1,4 +1,5 @@
 import { ChangeEvent, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks/hooks";
 import { AppDispatch } from "../../redux/store/store";
 import {
@@ -50,6 +51,8 @@ const TattooForm = ({ tattoo }: tattooProp): JSX.Element => {
     setFormData(formInitialState);
   };
 
+  const navigate = useNavigate();
+
   const updateTattoo = (event: React.SyntheticEvent) => {
     event.preventDefault();
     const dispatchedData: FormData | any = new FormData();
@@ -61,6 +64,7 @@ const TattooForm = ({ tattoo }: tattooProp): JSX.Element => {
     resetForm();
     const id = tattoo?._id;
     dispatch(updateTattooThunk(dispatchedData, id as string));
+    navigate("/my-tattoos");
   };
 
   const submitTattoo = (event: React.SyntheticEvent) => {
@@ -74,6 +78,7 @@ const TattooForm = ({ tattoo }: tattooProp): JSX.Element => {
     resetForm();
 
     dispatch(createTattooThunk(dispatchedData));
+    navigate("/my-tattoos");
   };
 
   return (
