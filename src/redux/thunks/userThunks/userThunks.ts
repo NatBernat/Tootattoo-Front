@@ -36,7 +36,7 @@ export const loginUserThunk =
         isLoading: false,
         autoClose: 100,
       });
-      toast.error("Username or password are wrong");
+      toast.error(error);
     }
   };
 
