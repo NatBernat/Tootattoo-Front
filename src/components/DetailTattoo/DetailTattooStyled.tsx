@@ -15,7 +15,6 @@ const DetailTattooStyled = styled.section`
   .detail-buttons {
     display: flex;
     justify-content: space-around;
-    /* display: none; */
 
     button {
       cursor: pointer;
