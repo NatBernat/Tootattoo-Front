@@ -4,7 +4,12 @@ import { BrowserRouter } from "react-router-dom";
 import store from "../../redux/store/store";
 import HeaderMenu from "./HeaderMenu";
 
-describe("Given a TattooItem component", () => {
+jest.mock("../../redux/hooks/hooks", () => ({
+  ...jest.requireActual("../../redux/hooks/hooks"),
+  useAppSelector: () => jest.fn().mockReturnValue(true),
+}));
+
+describe("Given a HeaderMenu component", () => {
   describe("When it's invoked", () => {
     test("Then it should render a tattoo image", () => {
       render(
