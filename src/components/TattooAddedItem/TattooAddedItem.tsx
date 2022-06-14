@@ -5,7 +5,7 @@ import { ITattoo } from "../../types/types";
 import TattooAddedItemStyled from "./TattooAddedItemStyled";
 
 const TattooAddedItem = ({
-  tattoo: { _id, image, title },
+  tattoo: { _id, imageBackup, title },
 }: {
   tattoo: ITattoo;
 }): JSX.Element => {
@@ -30,7 +30,7 @@ const TattooAddedItem = ({
       <TattooAddedItemStyled>
         <img
           className="tattoo"
-          src={`${process.env.REACT_APP_API_URL}uploads/images/${image}`}
+          src={imageBackup}
           alt={title}
           title={title}
           onClick={navigateToDetail}
