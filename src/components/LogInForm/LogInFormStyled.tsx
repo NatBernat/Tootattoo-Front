@@ -47,7 +47,8 @@ const LogInFormStyled = styled.section`
     font-size: 1em;
     :hover:enabled {
       background-color: #81625d;
-      color: white;
+      filter: invert(75%) sepia(50%) saturate(3000%) hue-rotate(310deg)
+        brightness(100%) contrast(100%);
     }
     :active:enabled {
       background-color: #3d2e2c;
