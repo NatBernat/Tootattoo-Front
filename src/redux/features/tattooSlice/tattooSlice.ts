@@ -5,6 +5,7 @@ const initialState: ITattoo = {
   _id: "",
   title: "",
   image: "",
+  imageBackup: "",
   creator: "",
   creationDate: "",
   tags: [],
