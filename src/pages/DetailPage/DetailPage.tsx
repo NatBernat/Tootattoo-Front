@@ -19,7 +19,12 @@ const DetailPage = (): JSX.Element => {
     <div>
       {tattooById.title !== "" && (
         <>
-          <h2 className="page-title">{tattooById.title}</h2>
+          <h2 className="page-title">
+            Title:{" "}
+            <span className="detail-page_title-property">
+              {tattooById.title}
+            </span>
+          </h2>
           <DetailPageStyled>
             <DetailTattoo tattoo={tattooById} />
           </DetailPageStyled>

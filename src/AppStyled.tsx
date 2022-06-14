@@ -19,6 +19,10 @@ const AppStyled = styled.div`
     font-weight: normal;
   }
 
+  .detail-page_title-property {
+    font-weight: bold;
+  }
+
   .not-found-page {
     margin: 25vh auto;
     padding: 10vh 10vw;

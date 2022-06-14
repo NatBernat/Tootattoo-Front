@@ -11,10 +11,10 @@ jest.mock("../../redux/hooks/hooks", () => ({
   useAppSelector: () => mockTattoos[0],
 }));
 
-describe("Given PublicListPage component", () => {
+describe("Given DetailPage component", () => {
   describe("When it's instantiated", () => {
-    test("Then it should render 3 list items", () => {
-      const expectedLength = 3;
+    test("Then it should render 2 list items", () => {
+      const expectedLength = 2;
 
       render(
         <BrowserRouter>
