@@ -16,10 +16,12 @@ const AddedListPage = (): JSX.Element => {
   return (
     <>
       <h2 className="page-title">My tattoos</h2>
-      <AddedListPageStyled className="page">
-        {tattoos.map((tattoo) => {
-          return <TattooAddedItem key={tattoo._id} tattoo={tattoo} />;
-        })}
+      <AddedListPageStyled>
+        <ul className="page">
+          {tattoos.map((tattoo) => {
+            return <TattooAddedItem key={tattoo._id} tattoo={tattoo} />;
+          })}
+        </ul>
       </AddedListPageStyled>
     </>
   );
