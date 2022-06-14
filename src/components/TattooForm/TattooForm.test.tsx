@@ -42,11 +42,38 @@ describe("Given a TattooForm component", () => {
   });
 
   describe("When it's invoked and an user clicks on the 'Submit' button", () => {
-    test("Then it should call the update dispatch function", () => {
+    test("Then it should call the create dispatch function", () => {
       render(
         <BrowserRouter>
           <Provider store={store}>
             <TattooForm tattoo={null} />
+          </Provider>
+        </BrowserRouter>
+      );
+
+      const imageInput = screen.getByLabelText("Image (max. 5mb)");
+      const imageInputText = "randomImage.png";
+      userEvent.type(imageInput, imageInputText);
+      const titleInput = screen.getByLabelText("Title");
+      const titleInputText = "Random title";
+      userEvent.type(titleInput, titleInputText);
+      const submitButton = screen.getByRole("button", {
+        name: "Submit tattoo",
+      });
+      userEvent.click(submitButton);
+
+      expect(mockDispatch).toHaveBeenCalled();
+    });
+  });
+
+  describe("When it's invoked receiving a tattoo and an user clicks on the 'Submit' button", () => {
+    test("Then it should call the update dispatch function", () => {
+      const mockTattoo = mockTattoos[0];
+
+      render(
+        <BrowserRouter>
+          <Provider store={store}>
+            <TattooForm tattoo={mockTattoo} />
           </Provider>
         </BrowserRouter>
       );
