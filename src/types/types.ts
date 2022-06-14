@@ -22,6 +22,7 @@ export interface ITattoo {
   _id: string;
   title: string;
   image: string;
+  imageBackup: string;
   creator: string;
   creationDate: string;
   tags: string[];

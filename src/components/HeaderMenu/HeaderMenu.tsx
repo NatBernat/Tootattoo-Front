@@ -40,12 +40,8 @@ const HeaderMenu = (): JSX.Element => {
         {logged ? (
           <>
             <li>
-              <Link
-                to="/my-favourites"
-                className="header-link"
-                onClick={closeMenu}
-              >
-                <p>Favourites</p>
+              <Link to="/" className="header-link" onClick={closeMenu}>
+                <p>Home</p>
               </Link>
             </li>
             <li>

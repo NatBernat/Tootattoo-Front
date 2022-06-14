@@ -11,6 +11,7 @@ describe("Given a tattoosSlice reducer", () => {
         _id: "",
         title: "",
         image: "",
+        imageBackup: "",
         creator: "",
         creationDate: "",
         tags: [],
