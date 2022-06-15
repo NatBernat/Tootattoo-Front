@@ -3,7 +3,8 @@ import { ITattoo } from "../../types/types";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks/hooks";
 import { loadTattoosByUserThunk } from "../../redux/thunks/tattoosThunks/tattoosThunks";
 import TattooAddedItem from "../../components/TattooAddedItem/TattooAddedItem";
-import PublicListPageStyled from "../PublicListPage/PublicListPageStyled";
+import { scrollUp } from "../PublicListPage/PublicListPage";
+import AddedListPageStyled from "./AddedListPageStyled";
 
 const AddedListPage = (): JSX.Element => {
   const dispatch = useAppDispatch();
@@ -25,23 +26,20 @@ const AddedListPage = (): JSX.Element => {
     setCurrentPage(tattoos.slice(index, index + 6));
   }, [index, tattoos]);
 
-  const scrollUp = () => {
-    window.scrollTo(0, 0);
-  };
-
   return (
     <>
       <h2 className="page-title">My tattoos</h2>
-      <PublicListPageStyled>
+      <AddedListPageStyled>
         <ul className="page">
           {currentPage.map((tattoo) => {
             return <TattooAddedItem key={tattoo._id} tattoo={tattoo} />;
           })}
         </ul>
         {tattoos.length > 5 && (
-          <div className="pagination" onClick={scrollUp}>
+          <div className="page-buttons" onClick={scrollUp}>
             {index > 0 && (
               <button
+                className="page-button"
                 onClick={() => {
                   if (index >= 6) {
                     setIndex(index - 6);
@@ -58,6 +56,7 @@ const AddedListPage = (): JSX.Element => {
             )}
             {tattoos.length > index + 6 && (
               <button
+                className="page-button"
                 onClick={() => {
                   if (index < tattoos.length - 6) {
                     setIndex(index + 6);
@@ -74,7 +73,7 @@ const AddedListPage = (): JSX.Element => {
             )}
           </div>
         )}
-      </PublicListPageStyled>
+      </AddedListPageStyled>
     </>
   );
 };

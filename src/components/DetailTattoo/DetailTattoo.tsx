@@ -1,10 +1,6 @@
-import { useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks/hooks";
-import {
-  deleteTattooThunk,
-  getTattooByIdThunk,
-} from "../../redux/thunks/tattoosThunks/tattoosThunks";
+import { deleteTattooThunk } from "../../redux/thunks/tattoosThunks/tattoosThunks";
 import Loading from "../Loading/Loading";
 import DetailTattooStyled from "./DetailTattooStyled";
 
@@ -13,10 +9,6 @@ const DetailTattoo = (): JSX.Element => {
   const username = useAppSelector((state) => state.user.username);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  const { id } = useParams();
-  useEffect(() => {
-    dispatch(getTattooByIdThunk(id as string));
-  });
 
   const { image, imageBackup, title, creator, creationDate, _id } =
     useAppSelector((state) => state.tattoo);
