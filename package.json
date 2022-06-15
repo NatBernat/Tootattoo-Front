@@ -12,6 +12,7 @@
     "@types/react-dom": "^18.0.5",
     "@types/react-test-renderer": "^18.0.0",
     "axios": "^0.27.2",
+    "cypress": "^9.7.0",
     "i": "^0.3.7",
     "jwt-decode": "^3.1.2",
     "npm": "^8.12.1",
@@ -53,6 +54,7 @@
   "devDependencies": {
     "@types/jest": "^27.5.1",
     "@types/styled-components": "^5.1.25",
+    "eslint-plugin-cypress": "^2.12.1",
     "husky": "^7.0.0",
     "msw": "^0.42.0",
     "react-test-renderer": "^18.1.0",
