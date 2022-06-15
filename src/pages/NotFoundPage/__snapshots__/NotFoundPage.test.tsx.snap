@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given NotFoundPage component When it's rendered Then it should always match this snapshot 1`] = `
+<div
+  className="sc-bczRLJ knOfCy page not-found-page"
+>
+  <h2>
+    Page not found
+  </h2>
+  <img
+    alt="tootattoo logo"
+    src="./images/imageLogo.svg"
+  />
+</div>
+`;
