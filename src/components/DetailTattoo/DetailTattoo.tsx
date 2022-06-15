@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks/hooks";
 import { deleteTattooThunk } from "../../redux/thunks/tattoosThunks/tattoosThunks";
-import Loading from "../Loading/Loading";
 import DetailTattooStyled from "./DetailTattooStyled";
 
 const DetailTattoo = (): JSX.Element => {
@@ -12,8 +11,6 @@ const DetailTattoo = (): JSX.Element => {
 
   const { image, imageBackup, title, creator, creationDate, _id } =
     useAppSelector((state) => state.tattoo);
-
-  const loading: boolean = useAppSelector((state) => state.ui.loading);
 
   const deleteButton = () => {
     dispatch(deleteTattooThunk(_id));
@@ -30,7 +27,6 @@ const DetailTattoo = (): JSX.Element => {
 
   return (
     <DetailTattooStyled>
-      {loading && <Loading />}
       <img src={image} alt={title} onError={onError} />
       {logged && username === creator && (
         <div className="detail-buttons">
