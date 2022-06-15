@@ -9,7 +9,7 @@ const TattooItem = ({
 }): JSX.Element => {
   const navigate = useNavigate();
   const detailPage = () => {
-    navigate(`/${_id}`);
+    navigate(`/tattoo/${_id}`);
   };
   return (
     <>

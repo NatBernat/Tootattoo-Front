@@ -18,7 +18,7 @@ const TattooAddedItem = ({
   const navigate = useNavigate();
 
   const navigateToDetail = () => {
-    navigate(`/${_id}`);
+    navigate(`/tattoo/${_id}`);
   };
 
   const editTattoo = () => {

@@ -30,7 +30,7 @@ const DetailTattoo = ({
           <button onClick={deleteButton}>
             <img
               className="button__icon"
-              src="./images/trash-icon.svg"
+              src={process.env.REACT_APP_FRONT_URL + "./images/trash-icon.svg"}
               alt="delete tattoo"
               title="delete tattoo"
             />
@@ -39,7 +39,9 @@ const DetailTattoo = ({
             <button>
               <img
                 className="button__icon"
-                src="./images/arrow-icon.svg"
+                src={
+                  process.env.REACT_APP_FRONT_URL + "./images/arrow-icon.svg"
+                }
                 alt="download tattoo"
                 title="download tattoo"
               />
@@ -48,7 +50,7 @@ const DetailTattoo = ({
           <button onClick={editButton}>
             <img
               className="button__icon"
-              src="./images/list-icon.svg"
+              src={process.env.REACT_APP_FRONT_URL + "./images/list-icon.svg"}
               alt="edit tattoo"
               title="edit tattoo"
             />
