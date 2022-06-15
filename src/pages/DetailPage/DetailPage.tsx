@@ -26,7 +26,7 @@ const DetailPage = (): JSX.Element => {
             </span>
           </h2>
           <DetailPageStyled>
-            <DetailTattoo tattoo={tattooById} />
+            <DetailTattoo />
           </DetailPageStyled>
         </>
       )}

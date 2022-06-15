@@ -3,7 +3,7 @@ import { ITattoo } from "../../types/types";
 import TattooItemStyled from "./TattooItemStyled";
 
 const TattooItem = ({
-  tattoo: { _id, imageBackup, title, creator },
+  tattoo: { _id, image, imageBackup, title, creator },
 }: {
   tattoo: ITattoo;
 }): JSX.Element => {
@@ -11,13 +11,22 @@ const TattooItem = ({
   const detailPage = () => {
     navigate(`/tattoo/${_id}`);
   };
+
+  const onError = (error: any) => {
+    (error.target as HTMLImageElement).src = imageBackup;
+  };
+
   return (
-    <>
-      <TattooItemStyled onClick={detailPage}>
-        <img className="tattoo" src={imageBackup} alt={title} title={title} />
-        <p className="tattoo-creator">@{creator}</p>
-      </TattooItemStyled>
-    </>
+    <TattooItemStyled onClick={detailPage}>
+      <img
+        className="tattoo"
+        src={image}
+        onError={onError}
+        alt={title}
+        title={title}
+      />
+      <p className="tattoo-creator">@{creator}</p>
+    </TattooItemStyled>
   );
 };
 
