@@ -39,7 +39,7 @@ const DetailTattoo = ({
             <button>
               <img
                 className="button__icon"
-                src="./images/download-icon.svg"
+                src="./images/arrow-icon.svg"
                 alt="download tattoo"
                 title="download tattoo"
               />

@@ -17,16 +17,16 @@ const PublicListPage = (): JSX.Element => {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
+    dispatch(loadTattoosThunk());
+  }, [dispatch]);
+
+  useEffect(() => {
     setCurrentPage(tattoos.slice(0, 6));
   }, [tattoos]);
 
   useEffect(() => {
     setCurrentPage(tattoos.slice(index, index + 6));
   }, [index, tattoos]);
-
-  useEffect(() => {
-    dispatch(loadTattoosThunk());
-  }, [dispatch]);
 
   const scrollUp = () => {
     window.scrollTo(0, 0);
@@ -53,13 +53,13 @@ const PublicListPage = (): JSX.Element => {
               >
                 <img
                   className="button__icon--back"
-                  src="./images/download-icon.svg"
+                  src="./images/arrow-icon.svg"
                   alt="back"
                   title="back"
                 />
               </button>
             )}
-            {tattoos.length > index + 5 && (
+            {tattoos.length > index + 6 && (
               <button
                 onClick={() => {
                   if (index < tattoos.length - 6) {
@@ -69,7 +69,7 @@ const PublicListPage = (): JSX.Element => {
               >
                 <img
                   className="button__icon--next"
-                  src="./images/download-icon.svg"
+                  src="./images/arrow-icon.svg"
                   alt="next"
                   title="next"
                 />

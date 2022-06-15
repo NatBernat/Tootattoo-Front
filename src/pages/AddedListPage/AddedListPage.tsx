@@ -1,28 +1,80 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { ITattoo } from "../../types/types";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks/hooks";
 import { loadTattoosByUserThunk } from "../../redux/thunks/tattoosThunks/tattoosThunks";
-import AddedListPageStyled from "./AddedListPageStyled";
 import TattooAddedItem from "../../components/TattooAddedItem/TattooAddedItem";
+import PublicListPageStyled from "../PublicListPage/PublicListPageStyled";
 
 const AddedListPage = (): JSX.Element => {
   const dispatch = useAppDispatch();
   const tattoos: ITattoo[] = useAppSelector((state) => state.tattoos);
 
+  const initialPage: ITattoo[] = [];
+  const [currentPage, setCurrentPage] = useState(initialPage);
+  const [index, setIndex] = useState(0);
+
   useEffect(() => {
     dispatch(loadTattoosByUserThunk());
   }, [dispatch]);
 
+  useEffect(() => {
+    setCurrentPage(tattoos.slice(0, 6));
+  }, [tattoos]);
+
+  useEffect(() => {
+    setCurrentPage(tattoos.slice(index, index + 6));
+  }, [index, tattoos]);
+
+  const scrollUp = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <>
       <h2 className="page-title">My tattoos</h2>
-      <AddedListPageStyled>
+      <PublicListPageStyled>
         <ul className="page">
-          {tattoos.map((tattoo) => {
+          {currentPage.map((tattoo) => {
             return <TattooAddedItem key={tattoo._id} tattoo={tattoo} />;
           })}
         </ul>
-      </AddedListPageStyled>
+        {tattoos.length > 5 && (
+          <div className="pagination" onClick={scrollUp}>
+            {index > 0 && (
+              <button
+                onClick={() => {
+                  if (index >= 6) {
+                    setIndex(index - 6);
+                  }
+                }}
+              >
+                <img
+                  className="button__icon--back"
+                  src="./images/arrow-icon.svg"
+                  alt="back"
+                  title="back"
+                />
+              </button>
+            )}
+            {tattoos.length > index + 6 && (
+              <button
+                onClick={() => {
+                  if (index < tattoos.length - 6) {
+                    setIndex(index + 6);
+                  }
+                }}
+              >
+                <img
+                  className="button__icon--next"
+                  src="./images/arrow-icon.svg"
+                  alt="next"
+                  title="next"
+                />
+              </button>
+            )}
+          </div>
+        )}
+      </PublicListPageStyled>
     </>
   );
 };
