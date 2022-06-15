@@ -32,6 +32,8 @@ const HeaderMenu = (): JSX.Element => {
           <img
             src={process.env.REACT_APP_FRONT_URL + "images/textLogo.svg"}
             alt="Tootattoo logo"
+            width="225px"
+            height="25px"
           />
         </h1>
       </Link>
