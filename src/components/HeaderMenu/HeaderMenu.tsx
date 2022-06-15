@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { logoutActionCreator } from "../../redux/features/userSlice/userSlice";
+/* import imageLogo from "/images/imageLogo.svg"; */
 
 import { useAppDispatch, useAppSelector } from "../../redux/hooks/hooks";
 import HeaderMenuStyled from "./HeaderMenuStyled";
@@ -29,7 +30,10 @@ const HeaderMenu = (): JSX.Element => {
     <HeaderMenuStyled className="header">
       <Link to="/" onClick={closeMenu}>
         <h1 title="Tootattoo" className="logo">
-          <img src="./images/textLogo.svg" alt="Tootattoo logo" />
+          <img
+            src={process.env.REACT_APP_FRONT_URL + "images/textLogo.svg"}
+            alt="Tootattoo logo"
+          />
         </h1>
       </Link>
       <input className="menu-btn" type="checkbox" id="menu-btn" />

@@ -54,7 +54,7 @@ const App = (): JSX.Element => {
             </UnloggedCheck>
           }
         />
-        <Route path="/:id" element={<DetailPage />} />
+        <Route path="/tattoo/:id" element={<DetailPage />} />
         <Route
           path="/my-tattoos"
           element={
