@@ -33,12 +33,6 @@ const TattooItemStyled = styled.li`
     right: 0;
     font-family: inherit;
     font-size: 1.1em;
-    :hover {
-      cursor: not-allowed;
-      background-color: #fabfb77f;
-      color: black;
-      font-weight: bold;
-    }
   }
 `;
 
