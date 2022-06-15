@@ -1,6 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../redux/hooks/hooks";
-import { deleteTattooThunk } from "../../redux/thunks/tattoosThunks/tattoosThunks";
+import {
+  deleteTattooThunk,
+  getTattooByIdThunk,
+} from "../../redux/thunks/tattoosThunks/tattoosThunks";
 import { ITattoo } from "../../types/types";
 import TattooAddedItemStyled from "./TattooAddedItemStyled";
 
@@ -21,7 +24,8 @@ const TattooAddedItem = ({
     navigate(`/tattoo/${_id}`);
   };
 
-  const editTattoo = () => {
+  const editTattoo = async () => {
+    await dispatch(getTattooByIdThunk(_id as string));
     navigate(`/edit-tattoo/${_id}`);
   };
 
