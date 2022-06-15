@@ -1,4 +1,4 @@
-const mockTattoos = [
+/* const mockTattoos = [
   {
     _id: "1a1b1c",
     title: "Arm abstract fluid forms",
@@ -19,9 +19,9 @@ const mockTattoos = [
     creationDate: "2022-06-02",
     tags: ["medium", "traditional", "color", "photo"],
   },
-];
+]; */
 
-export const mockedTattoos = [
+const mockTattoos = [
   {
     _id: "62a842836e5ac2e9dc0d7887",
     title: "poketattoo",

@@ -13,8 +13,8 @@ jest.mock("../../redux/hooks/hooks", () => ({
 
 describe("Given AddedListPage component", () => {
   describe("When it's instantiated", () => {
-    test("Then it should render a list", () => {
-      const expectedLength = 2;
+    test("Then it should render a list items", () => {
+      const expectedLength = 13;
 
       render(
         <BrowserRouter>

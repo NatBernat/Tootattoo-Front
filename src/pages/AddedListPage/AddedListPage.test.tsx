@@ -2,14 +2,14 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
-import { mockedTattoos } from "../../mocks/mockTattoos";
+import mockTattoos from "../../mocks/mockTattoos";
 import store from "../../redux/store/store";
 import AddedListPage from "./AddedListPage";
 
 jest.mock("../../redux/hooks/hooks", () => ({
   ...jest.requireActual("../../redux/hooks/hooks"),
   useAppDispatch: () => jest.fn(),
-  useAppSelector: () => mockedTattoos,
+  useAppSelector: () => mockTattoos,
 }));
 
 describe("Given AddedListPage component", () => {
