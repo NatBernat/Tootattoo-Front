@@ -3,8 +3,11 @@ import TattooItem from "../../components/TattooItem/TattooItem";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks/hooks";
 import { loadTattoosThunk } from "../../redux/thunks/tattoosThunks/tattoosThunks";
 import { ITattoo } from "../../types/types";
-
 import PublicListPageStyled from "./PublicListPageStyled";
+
+export const scrollUp = () => {
+  window.scrollTo(0, 0);
+};
 
 const PublicListPage = (): JSX.Element => {
   const dispatch = useAppDispatch();
@@ -27,10 +30,6 @@ const PublicListPage = (): JSX.Element => {
   useEffect(() => {
     setCurrentPage(tattoos.slice(index, index + 6));
   }, [index, tattoos]);
-
-  const scrollUp = () => {
-    window.scrollTo(0, 0);
-  };
 
   return (
     <>
