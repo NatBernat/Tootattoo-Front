@@ -28,7 +28,7 @@ const App = (): JSX.Element => {
       const userInfo: ITokenInfo = jwtDecode(token as string);
       dispatch(loginActionCreator(userInfo));
     } catch (error) {}
-  });
+  }, [dispatch, token]);
 
   const loading: boolean = useAppSelector((state) => state.ui.loading);
 
