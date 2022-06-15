@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { logoutActionCreator } from "../../redux/features/userSlice/userSlice";
-/* import imageLogo from "/images/imageLogo.svg"; */
 
 import { useAppDispatch, useAppSelector } from "../../redux/hooks/hooks";
 import HeaderMenuStyled from "./HeaderMenuStyled";

@@ -21,7 +21,7 @@ jest.mock("react-router-dom", () => ({
 
 describe("Given a LoginForm component", () => {
   describe("When it's invoked", () => {
-    test("Then it should render a password label", () => {
+    test("Then it should render a password label with value '1234'", () => {
       const testedLabel = "Password";
       const inputPassword = "1234";
 

@@ -1,18 +1,27 @@
-import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks/hooks";
-import { deleteTattooThunk } from "../../redux/thunks/tattoosThunks/tattoosThunks";
-import { ITattoo } from "../../types/types";
+import {
+  deleteTattooThunk,
+  getTattooByIdThunk,
+} from "../../redux/thunks/tattoosThunks/tattoosThunks";
+import Loading from "../Loading/Loading";
 import DetailTattooStyled from "./DetailTattooStyled";
 
-const DetailTattoo = ({
-  tattoo: { imageBackup, title, creator, creationDate, _id },
-}: {
-  tattoo: ITattoo;
-}): JSX.Element => {
+const DetailTattoo = (): JSX.Element => {
   const logged = useAppSelector((state) => state.user.logged);
   const username = useAppSelector((state) => state.user.username);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
+  const { id } = useParams();
+  useEffect(() => {
+    dispatch(getTattooByIdThunk(id as string));
+  });
+
+  const { image, imageBackup, title, creator, creationDate, _id } =
+    useAppSelector((state) => state.tattoo);
+
+  const loading: boolean = useAppSelector((state) => state.ui.loading);
 
   const deleteButton = () => {
     dispatch(deleteTattooThunk(_id));
@@ -22,9 +31,15 @@ const DetailTattoo = ({
   const editButton = () => {
     navigate(`/edit-tattoo/${_id}`);
   };
+
+  const onError = (error: any) => {
+    (error.target as HTMLImageElement).src = imageBackup;
+  };
+
   return (
     <DetailTattooStyled>
-      <img src={imageBackup} alt={title} />
+      {loading && <Loading />}
+      <img src={image} alt={title} onError={onError} />
       {logged && username === creator && (
         <div className="detail-buttons">
           <button onClick={deleteButton}>

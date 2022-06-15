@@ -6,7 +6,7 @@ exports[`Given a Loading Component When it's rendered Then it should always matc
 >
   <img
     alt="Loader"
-    src="./images/imageLogo.svg"
+    src="https://bernat-arcusa-front-final-project-202204-bcn.netlify.app/images/imageLogo.svg"
   />
 </div>
 `;

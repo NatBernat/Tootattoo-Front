@@ -15,6 +15,7 @@ const TattooItemStyled = styled.li`
   img {
     object-fit: cover;
     width: 100%;
+    height: 100%;
     transition: 0.5s all ease-in-out;
   }
   :hover img {
